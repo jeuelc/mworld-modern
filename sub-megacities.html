@@ -1,0 +1,140 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-megacities">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_megacities.js"></script>
+  <link rel="stylesheet" href="css/style_megacities.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMegacities"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMegacities"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMegacities"></div></div>
+  <div class="infobtnholder"><div class="infobtnMegacities"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMegacities"></div></div>
+  <div class="menubtnholder"><div class="menubtnMegacities"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Megacities</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navMegacities-content">
+		<p>More people live in cities and towns now than in any other kind of place in the world. Thats the first time in human history that this has happened, and it means that cities are very important to the future of the world.</p>
+
+		<p>But there are some cities that are so big, so spectacularly enormous, they have a special name: megacities.  These are cities with tens of millions of people living in them, like Sao Paulo in Brazil with more than 20 million people, or Jakarta in Indonesia with more than 26 million people.</p>
+
+		<p>They grow really quickly.  Sometimes whole new parts of the city appear in just a few days! Such fast growth means there are lots of challenges to living and working in megacities.  This is especially because megacities have huge numbers of poor people who face enormous challenges surviving each day.  Megacities are going to grow in number and in size in the future, so the challenges of providing enough homes, clean water, schools and jobs for everyone is only going to get harder.</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-megacities-daily-life.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Megacities/Daily_Life.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-megacities-the-future.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Megacities/The_Future.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-megacities-what-are-megacities.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Megacities/What_Are_Megacities.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-megacities-why-do-we-have-them.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Megacities/Why_Do_We_Have_Them.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMegacities" id="playstopMegacities"></div></div>
+    <div class="bMegacities"><div class="rwMegacities" id="Megacitiesaudiobbtn"></div></div>
+    <div class="plMegacities"><div class="plpsMegacities" id="Megacitiesaudioplbtn"></div></div>
+    <div class="fMegacities"><div class="fwMegacities" id="Megacitiesaudiofbtn"></div></div>
+    <div id="actualaudio-Megacities" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Megacities').html('<audio id="Megacitiesaudio" controls preload onpause="playsMegaCities()" onplay="pauseMegaCities()"><source src="audio/Megacities/Megacities.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-megacities").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundMegaCities.pause(); bgsoundMegaCities.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-modernworld.html", {transition: "slide", reverse: true });
+      bgsoundMegaCities.pause(); 
+      bgsoundMegaCities.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMegaCities() {
+         bgsoundMegaCities.play();
+    }
+       
+    function pauseMegaCities() {
+         bgsoundMegaCities.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopMegacities").on('tap', function() {
+      if(!playing) {
+        Megacitiesaudio.play();
+        $('.micbtnMegacities').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Megacitiesaudio.pause(); Megacitiesaudio.currentTime = 0;
+        $('.micbtnMegacities').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Megacitiesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Megacitiesaudio.pause();
+        paused = true;
+      } else {
+        Megacitiesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Megacitiesaudiofbtn").on('tap', function() {
+      var ctime = Megacitiesaudio.currentTime;
+      Megacitiesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Megacitiesaudiobbtn").on('tap', function() {
+      var ctime = Megacitiesaudio.currentTime;
+      Megacitiesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Megacitiesaudiopsbtn").on('tap', function() {
+      Megacitiesaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

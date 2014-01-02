@@ -1,0 +1,129 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-megacities-the-future">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_megacities.js"></script>
+  <link rel="stylesheet" href="css/style_megacities.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMegacities"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMegacities"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMegacities"></div></div>
+  <div class="infobtnholder"><div class="infobtnMegacities"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMegacities"></div></div>
+  <div class="menubtnholder"><div class="menubtnMegacities"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>The Future</h1></div>
+
+  <div data-role="content" class="kidzcontent">
+	<div class="navMegacities-thefuture">
+		<p>There are going to be more megacities in the future and they're going to get even bigger. But there are such big challenges and problems, it means people are going to have to start thinking creatively!</p>
+		<p>Imagine you're in charge.  How can you make sure everyone has somewhere safe to sleep and clean water to drink?  How can you make sure every child can go to school?  What about providing enough trains and trams and buses for everybody to get around to work, to school and to have fun?</p>
+		<p>These are some of the future challenges of megacities!</p>	
+	</div>
+	<div class="here_to_stay">
+	</div>
+	<div class="growing_city">
+	</div>
+	<div class="floating_school">
+	</div>
+	<div class="cable_car">
+	</div>	
+
+
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnMegacities" id="playstopTheFuture"></div></div>
+    <div class="bMegacities"><div class="rwMegacities" id="TheFutureaudiobbtn"></div></div>
+    <div class="plMegacities"><div class="plpsMegacities" id="TheFutureaudioplbtn"></div></div>
+    <div class="fMegacities"><div class="fwMegacities" id="TheFutureaudiofbtn"></div></div>
+    <div id="actualaudio-TheFuture" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-TheFuture').html('<audio id="TheFutureaudio" controls preload onpause="playsMegaCities()" onplay="pauseMegacities()"><source src="audio/Megacities/The_Future.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-megacities-the-future").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+	
+	$('.here_to_stay').on('tap', function() {
+      $.mobile.changePage("sub-megacities-the-future-cable-car-in-rio-de-janeiro.html", {transition: "slide"});
+    });
+	$('.growing_city').on('tap', function() {
+      $.mobile.changePage("sub-megacities-the-future-floating-school-in-lagos.html", {transition: "slide"});
+    });
+	$('.floating_school').on('tap', function() {
+      $.mobile.changePage("sub-megacities-the-future-growing-food-in-the-city.html", {transition: "slide"});
+    });
+	$('.cable_car').on('tap', function() {
+      $.mobile.changePage("sub-megacities-the-future-here-to-stay.html", {transition: "slide"});
+    });
+	 
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMegaCities.pause(); bgsoundMegaCities.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-megacities.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMegaCities() {
+         bgsoundMegaCities.play();
+    }
+       
+    function pauseMegaCities() {
+         bgsoundMegaCities.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopTheFuture").on('tap', function() {
+      if(!playing) {
+        TheFutureaudio.play();
+        $('.micbtnMegacities').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        TheFutureaudio.pause(); TheFutureaudio.currentTime = 0;
+        $('.micbtnMegacities').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#TheFutureaudioplbtn").on('tap', function() {
+      if(!paused) {
+        TheFutureaudio.pause();
+        paused = true;
+      } else {
+        TheFutureaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#TheFutureaudiofbtn").on('tap', function() {
+      var ctime = TheFutureaudio.currentTime;
+      TheFutureaudio.currentTime = ctime + 10;
+    });
+    
+    $("#TheFutureaudiobbtn").on('tap', function() {
+      var ctime = TheFutureaudio.currentTime;
+      TheFutureaudio.currentTime = ctime - 10;
+    });
+    
+    $("#TheFutureaudiopsbtn").on('tap', function() {
+      TheFutureaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

@@ -828,9 +828,9 @@ function pauseeverchangingearth() { bgsoundeverchangingearth.pause() }
 function playseverchangingearth() { bgsoundeverchangingearth.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
 
 /************************ Mega Cities *******************************/
-var bgsoundmegacities = new Audio();
-bgsoundmegacities.src = "audio/Megacities/Megacities_BG.mp3";
-bgsoundmegacities.addEventListener('ended', function() { bgsoundmegacities.play(); });
+var bgsoundMegaCities = new Audio();
+bgsoundMegaCities.src = "audio/Megacities/Megacities_BG.mp3";
+bgsoundMegaCities.addEventListener('ended', function() { bgsoundMegaCities.play(); });
 
-function pausemegacities() { bgsoundmegacities.pause() }
-function playsmegacities() { bgsoundmegacities.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
+function pauseMegaCities() { bgsoundMegaCities.pause() }
+function playsMegaCities() { bgsoundMegaCities.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }

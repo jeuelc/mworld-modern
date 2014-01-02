@@ -1,0 +1,178 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-megacities-what-are-megacities">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_megacities.js"></script>
+  <link rel="stylesheet" href="css/style_megacities.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMegacities"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMegacities"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMegacities"></div></div>
+  <div class="infobtnholder"><div class="infobtnMegacities"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMegacities"></div></div>
+  <div class="menubtnholder"><div class="menubtnMegacities"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>What are Megacities?</h1></div>
+
+  <div data-role="content" class="kidzcontent">
+	<div class="navMegacities-whataremegacities">
+		<p>A megacity is a city of more than 10 million people.  That is a very big city!  Can you imagine what it would be like to live in a city that big?
+		</p>
+		<p>Back in 1950, there were only two megacities in the world: New York and Tokyo were the only cities with such large populations.  Tokyo became the largest city in the world in 1955 and grew very quickly through the 1960s and 1970s when it built cool new services like the bullet train, which attracted people to live and work there.  The Tokyo region is still the biggest city area in the world today: it has over 37 million residents!</p>
+
+		<p>Today, there are more than 20 megacities in the world (23 in 2012) and experts think there might be as many as 37 by the year 2025.  And some of those cities, like Jakarta, Seoul, Delhi and Shanghai, are not just more than 10 million people - they have as many as 20 million people!</p>	
+	</div>
+	<style>
+
+		.what_are_megacities{
+			height: 201px;
+			width: 200px;
+			position: absolute;
+			left: 544px;
+			top: 65px;		
+		}
+		.life_in_megacity{
+			height: 201px;
+			width: 136px;
+			position: absolute;
+			left: 790px;
+			top: 211px;			
+		}
+		.look_like{
+			height: 201px;
+			width: 175px;
+			position: absolute;
+			left: 563px;
+			top: 315px;			
+		}
+		.fast_they_grow{
+			height: 192px;
+			width: 239px;
+			position: absolute;
+			left: 315px;
+			top: 460px;			
+		}
+		.sao_paulo{
+			height: 192px;
+			width: 239px;
+			position: absolute;
+			left: 743px;
+			top: 460px;			
+		}
+
+	</style>
+	<div class="what_are_megacities">
+	</div>
+	<div class="life_in_megacity">
+	</div>
+	<div class="look_like">
+	</div>
+	<div class="fast_they_grow">
+	</div>	
+	<div class="sao_paulo">
+	</div>	
+
+
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnMegacities" id="playstopWhatAreMegacities"></div></div>
+    <div class="bMegacities"><div class="rwMegacities" id="WhatAreMegacitiesaudiobbtn"></div></div>
+    <div class="plMegacities"><div class="plpsMegacities" id="WhatAreMegacitiesaudioplbtn"></div></div>
+    <div class="fMegacities"><div class="fwMegacities" id="WhatAreMegacitiesaudiofbtn"></div></div>
+    <div id="actualaudio-WhatAreMegacities" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WhatAreMegacities').html('<audio id="WhatAreMegacitiesaudio" controls preload onpause="playsMegaCities()" onplay="pauseMegacities()"><source src="audio/Megacities/What_Are_Megacities.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-megacities-what-are-megacities").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+	
+	
+	
+	
+		
+	$('.what_are_megacities').on('tap', function() {
+      $.mobile.changePage("sub-megacities-what-are-megacities-", {transition: "slide"});
+    });
+	$('.life_in_megacity').on('tap', function() {
+      $.mobile.changePage("sub-megacities-what-are-megacities-whats-life-like-in-a-megacity.html", {transition: "slide"});
+    });
+	$('.look_like').on('tap', function() {
+      $.mobile.changePage("sub-megacities-what-are-megacities-what-do-they-look-like.html", {transition: "slide"});
+    });
+	$('.fast_they_grow').on('tap', function() {
+      $.mobile.changePage("sub-megacities-what-are-megacities-how-fast-do-they-grow.html", {transition: "slide"});
+    });
+	$('.sao_paulo').on('tap', function() {
+      $.mobile.changePage("sub-megacities-what-are-megacities-case-study-sao-paulo.html", {transition: "slide"});
+    });	 
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMegaCities.pause(); bgsoundMegaCities.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-megacities.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMegaCities() {
+         bgsoundMegaCities.play();
+    }
+       
+    function pauseMegaCities() {
+         bgsoundMegaCities.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopWhatAreMegacities").on('tap', function() {
+      if(!playing) {
+        WhatAreMegacitiesaudio.play();
+        $('.micbtnMegacities').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WhatAreMegacitiesaudio.pause(); WhatAreMegacitiesaudio.currentTime = 0;
+        $('.micbtnMegacities').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WhatAreMegacitiesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WhatAreMegacitiesaudio.pause();
+        paused = true;
+      } else {
+        WhatAreMegacitiesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WhatAreMegacitiesaudiofbtn").on('tap', function() {
+      var ctime = WhatAreMegacitiesaudio.currentTime;
+      WhatAreMegacitiesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WhatAreMegacitiesaudiobbtn").on('tap', function() {
+      var ctime = WhatAreMegacitiesaudio.currentTime;
+      WhatAreMegacitiesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WhatAreMegacitiesaudiopsbtn").on('tap', function() {
+      WhatAreMegacitiesaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

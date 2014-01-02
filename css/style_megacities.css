@@ -1,14 +1,26 @@
 /* Main common basic pages */
 #sub-megacities{
-  background:url('images/9-12/The_Modern_World/Ever_Changing_Earth/Ever_Changing_Earth_BG.jpg') no-repeat;
+  background:url('images/9-12/The_Modern_World/Megacities/Megacities_BG.jpg') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
 }
 
 /* Custom Pages Style */
-#ssub-megacities-custom{
-  background:url('images/9-12/The_Modern_World/Ever_Changing_Earth/Fossil_Puzzles/Fossil_Puzzles_BG.jpg') no-repeat;
+#sub-megacities-daily-life{
+  background:url('images/9-12/The_Modern_World/Megacities/Daily_Life/Daily_Life_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+#sub-megacities-the-future{
+  background:url('images/9-12/The_Modern_World/Megacities/The_Future/The_Future_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+#sub-megacities-what-are-megacities{
+  background:url('images/9-12/The_Modern_World/Megacities/What_Are_Megacities/What_Are_Megacities_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
@@ -134,9 +146,69 @@
     top: 405px;
 }
 
+/* custom page clickable divs */
+		.meet_deepak{
+			height: 90px;
+			width: 257px;
+			top: 335px;
+			position: absolute;
+			left: 84px;
+		}
+		.megacity_mayors{
+			height: 90px;
+			width: 215px;
+			top: 419px;
+			position: absolute;
+			left: 285px;			
+		}
+		.becak_driver{
+			height: 58px;
+			width: 165px;
+			top: 230px;
+			position: absolute;
+			left: 505px;		
+		}
+		.meet_minsuh{
+			height: 90px;
+			width: 225px;
+			top: 385px;
+			position: absolute;
+			left: 725px;
+		
+		}
+		
+		.here_to_stay{
+			height: 350px;
+			width: 236px;
+			top: 320px;
+			position: absolute;
+			left: 37px;
+		}
+		.growing_city{
+			height: 350px;
+			width: 236px;
+			top: 320px;
+			position: absolute;
+			left: 272px;
+		}
+		.floating_school{
+			height: 350px;
+			width: 236px;
+			top: 320px;
+			position: absolute;
+			left: 506px;
+		}
+		.cable_car{
+			height: 350px;
+			width: 236px;
+			top: 320px;
+			position: absolute;
+			left: 742px;
+		}			
+/* custom page clickable divs ends here */
 
 /* Common Header Div Design */
-#sub-ever-changing-earth .bptitleholder{
+#sub-megacities .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -147,19 +219,38 @@
 }
 
 /* Custom Header Div Design */
-#sub-ever-changing-earth-fossil-puzzles .bptitleholder{
+#sub-megacities-daily-life .bptitleholder{
 	width: 490px;
 	height: 68px;
 	text-align: center;
 	line-height: 28px;
 	position: absolute;
-	top: 170px;
-	left: 347px;
+	top: 10px;
+	left: 281px;
+}
+#sub-megacities-the-future .bptitleholder{
+	width: 490px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 20px;
+	left: 281px;
+}
+
+#sub-megacities-what-are-megacities .bptitleholder{
+	width: 490px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
 }
 
 
 /* Common Header Design h1 */
-#sub-ever-changing-earth .bptitleholder h1{
+#sub-megacities .bptitleholder h1{
 	text-transform: uppercase;
 	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
@@ -169,9 +260,25 @@
 }
 
 /* Custom Page Header Design h1 */
-#sub-ever-changing-earth-fossil-puzzles .bptitleholder h1{
+#sub-megacities-daily-life .bptitleholder h1{
 	text-transform: uppercase;
-	color: #000000 !important;
+	color: #FFFFFF !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;	
+}
+#sub-megacities-the-future .bptitleholder h1{
+	text-transform: uppercase;
+	color: #FFFFFF !important;
+	font-family: "comic sans ms" !important;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;	
+}
+#sub-megacities-what-are-megacities .bptitleholder h1{
+	text-transform: uppercase;
+	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
 	font-weight: bold;
 	padding: 0;
@@ -233,17 +340,45 @@
 }
 
 /* Custom content */
-.navMegacities-fossilpuzzles{
+.navMegacities-dailylife{
 	position: absolute;
-	left: 640px;
-	top: 131px;
-	width: 325px;
+	left: 22px;
+	top: 50px;
+	width: 975px;
 	height: 379px;
 	overflow: auto;
-	text-align: left;
+	text-align: center;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+.navMegacities-thefuture{
+	position: absolute;
+	left: 22px;
+	top: 66px;
+	width: 975px;
+	height: 379px;
+	overflow: auto;
+	text-align: center;
 	font-family: comic sans ms;
 	font-size: 18px;
 	font-weight: normal;
 	color: #000000;
+}
+
+.navMegacities-whataremegacities{
+	position: absolute;
+	left: 22px;
+	top: 66px;
+	width: 487px;
+	height: 345px;
+	overflow: auto;
+	text-align: justify;
+	font-family: comic sans ms;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+	padding-right: 5px;
 }
 
