@@ -1,0 +1,201 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-what-is-money-something-to-trade">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Something to Trade</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<!-- will be triggered on pol3 -->
+        <a id="goatmarket" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/What_Is_Money/Something_To_Trade/Goat_Market_Hi_Res.jpg', 'When people used a barter system it was hard to be sure that they would meet someone who wanted to buy what they had.  They made special places for selling particular things  like the Djenne Goat market.');">click here</a>
+        
+		<!-- will be triggered on pol2 -->
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Money/What_Is_Money/Something_To_Trade/Trading.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Money/What_Is_Money/Something_To_Trade/Trading_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+			<!-- Read me -->
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/Something_To_Trade/Camels_Vs_Computers.png" alt="" />
+          </div>
+		  <!-- quiz -->
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/Something_To_Trade/Trading.png" alt="" />
+          </div>
+		  <!-- image card -->
+		  <div id="pol3" class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/Something_To_Trade/Goat_Market.jpg" alt="" />
+          </div>		  
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentMoney">
+		<p>Before money was created, people traded things with each other by offering what they had for what they wanted.  You might swap your goat for a whole heap of grain, for example.  This was called a 'barter' system. It wasn't very efficient because you had to find someone who had exactly what you wanted and wanted whatever you had, at the same place and at the same time!  This is known as a 'double coincidence of wants', and it means people waste a lot of time searching for the right person to trade with. You also need exact amounts; it doesn't allow for change to be left over. </p>
+
+		<p>Some people still use a barter system today, but money is much more common because it reduces the time spent searching and means you can pay for anything at any place at any time with anyone.  Money also lets you give change if the exact amount isn't paid because the value of one item is greater than the other.</p>
+      </div>
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar--> 
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopsomethingtotrade"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="somethingtotradeaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="somethingtotradeaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="somethingtotradeaudiofbtn"></div></div>
+    <div id="actualaudio-somethingtotrade" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-somethingtotrade').html('<audio id="somethingtotradeaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Something_To_Trade.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-what-is-money-something-to-trade").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+
+	//card on click js
+		//poll1
+		$("#pol1").on('tap', function() {
+		  $.mobile.changePage("sub-money-what-is-money-something-to-trade-camels-vs-computers.html", {transition: "slide"});
+		});		
+		
+		//poll2
+			$(".returncard").on('tap', function() {
+			  $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"transform": "rotateY(0deg)"});
+			  setTimeout(function() {
+				$("#pol2").css({"visibility":"visible", "z-index":4});
+				$('#f1_container').css({"visibility":"hidden", "z-index":0});
+			  }, 1000);
+			});
+			
+			$("#pol2").on('tap', function() {
+			  $('#f1_container').css({"visibility":"visible", "z-index":10});
+			  $(this).css({"visibility":"hidden"});
+			  $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"transform": "rotateY(180deg)"});
+			});	
+			$('#falseans').on('tap', function() {
+			  alert("Wrong answer");
+			});
+			$('#trueans').on('tap', function() {
+			  alert("Correct answer");
+			});			
+		//poll3		
+		$("#pol3").on('tap', function() {
+		  $('#goatmarket')[0].click();
+		});	
+	//card on click js ends here
+
+
+
+
+
+
+
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-the-magic-of-money.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopsomethingtotrade").on('tap', function() {
+      if(!playing) {
+        somethingtotradeaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        somethingtotradeaudio.pause(); somethingtotradeaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#somethingtotradeaudioplbtn").on('tap', function() {
+      if(!paused) {
+        somethingtotradeaudio.pause();
+        paused = true;
+      } else {
+        somethingtotradeaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#somethingtotradeaudiofbtn").on('tap', function() {
+      var ctime = somethingtotradeaudio.currentTime;
+      somethingtotradeaudio.currentTime = ctime + 10;
+    });
+    
+    $("#somethingtotradeaudiobbtn").on('tap', function() {
+      var ctime = somethingtotradeaudio.currentTime;
+      somethingtotradeaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      somethingtotradeaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+	//Definations
+
+	//Definations ends here
+	
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

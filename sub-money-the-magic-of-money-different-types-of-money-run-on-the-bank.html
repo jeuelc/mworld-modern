@@ -1,0 +1,160 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-the-magic-of-money-different-types-of-money-run-on-the-bank">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Run On The Bank</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<!-- will be triggered on pol3 -->
+        <a id="skinnypig" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Run_On_The_Bank/Skinny_Pig_Hi_Res.jpg', 'Banks only hold a small percentage of the deposits that we put in them  the rest is put to work!  But it\'s very important that the bank has enough money to give back to us when we need it! ');">click here</a>
+        <a id="protest" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Run_On_The_Bank/Protest_Hi_Res.jpg', 'If everyone tried to take all of their money out of the bank at the same time, the bank would run out of money!  Imagine if you couldn\'t get the money you wanted out of the bank  what would you do? ');">click here</a>		
+		<div id="zoomwrapper">
+			<!-- image card -->
+          <div id="polb1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Run_On_The_Bank/Skinny_Pig.jpg" alt="" />
+          </div>
+		 <!-- image card -->
+          <div id="polb2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Run_On_The_Bank/Protest.jpg" alt="" />
+          </div>
+		  
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentMoney">
+		<p>A 'run on the bank' happens when a lot of a bank's customers try to withdraw their deposit money at the same time!  The bank ends up short of reserves and is forced to sell off things it owns at cheap prices to come up with the necessary cash.  </p>
+
+		<p>In the worst case, this could cause a bank to go into bankruptcy and out of business.  </p>
+
+		<p>If lots of people lost faith in the banking system, this would lead to a banking crisis and a run on the banking system as a whole.  This could lead to a big reduction in the supply of money and in the end, economic growth would be reduced.  </p>
+      </div>
+
+		
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar--> 
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstoprunonthebank"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="runonthebankaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="runonthebankaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="runonthebankaudiofbtn"></div></div>
+    <div id="actualaudio-runonthebank" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#polb1').css("z-index", 2);
+      $('div#polb2').css("z-index", 1);
+      $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-runonthebank').html('<audio id="runonthebankaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Run_On_The_Bank.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-the-magic-of-money-different-types-of-money-run-on-the-bank").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+
+	//card on click js
+		//poll3		
+		$("#polb1").on('tap', function() {
+		  $('#skinnypig')[0].click();
+		});	
+		$("#polb2").on('tap', function() {
+		  $('#protest')[0].click();
+		});			
+	//card on click js ends here
+
+
+
+
+
+
+
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-the-magic-of-money-different-types-of-money.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstoprunonthebank").on('tap', function() {
+      if(!playing) {
+        runonthebankaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        runonthebankaudio.pause(); runonthebankaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#runonthebankaudioplbtn").on('tap', function() {
+      if(!paused) {
+        runonthebankaudio.pause();
+        paused = true;
+      } else {
+        runonthebankaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#runonthebankaudiofbtn").on('tap', function() {
+      var ctime = runonthebankaudio.currentTime;
+      runonthebankaudio.currentTime = ctime + 10;
+    });
+    
+    $("#runonthebankaudiobbtn").on('tap', function() {
+      var ctime = runonthebankaudio.currentTime;
+      runonthebankaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      runonthebankaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+	//Definations
+
+	//Definations ends here
+	
+  </script>
+  <script src="js/twocardLogicb.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

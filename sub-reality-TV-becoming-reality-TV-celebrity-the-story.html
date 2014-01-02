@@ -1,0 +1,132 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-becoming-reality-TV-celebrity-the-story">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>The Story</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="makeupgirllink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/The_Story/Makeup_Girl_Hi_Res.jpg', 'Some people use clothing or makeup to give people an idea of their image.  This doesn\'t have to be celebrities - a lot of people do this every day.');">click here</a>
+        <a id="punkslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/The_Story/Punks_Hi_Res.jpg', 'Some people use clothing to get their image across and help them to stand out from a crowd.  Can you think of some celebrities that do this?');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/The_Story/Makeup_Girl.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/The_Story/Punks.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentrealityTV">
+        <p>Whatever they do, all celebrities need  to have a life story that you care about.</p>
+		<p>Have you heard of Jade Goody?  She appeared on UK <i>Big Brother</i> when she was only 19.  At first, people in the media made fun of her.  But as Jade continued to appear on more and more reality programs we learned about her life, her difficult upbringing and her struggle to be a good mother and a better person.</p>
+		<p>When Jade passed away in 2009, her story was so well known that the Prime Minister of the UK saluted her courage.</p>
+		<p>We might never know what the 'real' Jade was like, but her compelling life story transformed her into a national figure.</p>
+		<p>Who is the most famous celebrity in your country?  What do people like about them?</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopthestory"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="thestoryaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="thestoryaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="thestoryaudiofbtn"></div></div>
+    <div id="actualaudio-thestory" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-thestory').html('<audio id="thestoryaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/The_Story.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-reality-TV-becoming-reality-TV-celebrity-the-story").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#makeupgirllink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#punkslink')[0].click();
+    }); 
+    function goBack(){
+      $.mobile.changePage("sub-reality-TV-becoming-reality-TV-celebrity.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopthestory").on('tap', function() {
+      if(!playing) {
+        thestoryaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        thestoryaudio.pause(); thestoryaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#thestoryaudioplbtn").on('tap', function() {
+      if(!paused) {
+        thestoryaudio.pause();
+        paused = true;
+      } else {
+        thestoryaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#thestoryaudiofbtn").on('tap', function() {
+      var ctime = thestoryaudio.currentTime;
+      thestoryaudio.currentTime = ctime + 10;
+    });
+    
+    $("#thestoryaudiobbtn").on('tap', function() {
+      var ctime = thestoryaudio.currentTime;
+      thestoryaudio.currentTime = ctime - 10;
+    });
+    
+    $("#thestoryaudiopsbtn").on('tap', function() {
+      thestoryaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

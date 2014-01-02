@@ -1,0 +1,129 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-looking-future">
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>The Future...</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navtrains-content3">
+        <p>Quite a lot of countries use super-fast trains to move people around.  MagLev trains have been around for a while but not many places use them.  What can we expect in the future?</p>
+		<p>Will we travel in more weird and wonderful ways?  Or will people decide that it just costs too much to build all the stuff you would need to run a whole new way of travel?</p>
+		<p>Engineering wise, vacuum tube trains are the next logical step after MagLev, to try to reduce the drag part of resistance.Think you might want to be an engineer in the future? Have a go at building your own super-fast train!</p>
+      </div>
+        
+      <div class="navbtn1" style="top:420px;">
+        <p><a href="sub-super-fast-trains-looking-future-vacuum-tube-trains.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/The_Future/Vacuum_Tube_Trains.png"></a></p>
+      </div>
+      <div class="navbtn2" style="left:400px;">
+        <p><a href="sub-super-fast-trains-looking-future-cool-stuff.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/The_Future/Cool_Stuff_Costs_A_Lot.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:420px;">
+        <p><a href="sub-super-fast-trains-looking-future-super-fast-trains.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/The_Future/Super_Fast_Train_Optimiser.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtntrains" id="playstoplookingfuture"></div></div>
+    <div class="btrains"><div class="rwtrains" id="lookingfutureaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="lookingfutureaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="lookingfutureaudiofbtn"></div></div>
+    <div id="actualaudio-lookingfuture" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-lookingfuture').html('<audio id="lookingfutureaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/looking_future.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-super-fast-trains-looking-future").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstoplookingfuture").on('tap', function() {
+      if(!playing) {
+        lookingfutureaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        lookingfutureaudio.pause(); lookingfutureaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#lookingfutureaudioplbtn").on('tap', function() {
+      if(!paused) {
+        lookingfutureaudio.pause();
+        paused = true;
+      } else {
+        lookingfutureaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#lookingfutureaudiofbtn").on('tap', function() {
+      var ctime = lookingfutureaudio.currentTime;
+      lookingfutureaudio.currentTime = ctime + 10;
+    });
+    
+    $("#lookingfutureaudiobbtn").on('tap', function() {
+      var ctime = lookingfutureaudio.currentTime;
+      lookingfutureaudio.currentTime = ctime - 10;
+    });
+    
+    $("#lookingfutureaudiopsbtn").on('tap', function() {
+      lookingfutureaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+  </script>
+</div> <!--//home-->

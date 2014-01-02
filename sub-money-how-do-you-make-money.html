@@ -1,0 +1,109 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-how-do-you-make-money">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+<div class="bptitleholder" style="padding-top:0px;"><h1>How Do You Make Money?</h1></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navMoney-how_do_you_make_moneny">
+		<p>
+		Making money is easy!  All you have to do Is create a product and get people to buy it, right?  But what if nobody wants your product?  What if it is too expensive to make?  And what if competitors come and try to steal our business?</p>
+		<p>Come with us as we open our own business and sell some ice cream! </p>
+    </div>  
+	<div class="get_started"></div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstophowdomakemoney"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="howdomakemoneyaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="howdomakemoneyaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="howdomakemoneyaudiofbtn"></div></div>
+    <div id="actualaudio-howdomakemoney" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-howdomakemoney').html('<audio id="howdomakemoneyaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/How_Do_You_Make_Money.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-how-do-you-make-money").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMoney.pause(); bgsoundMoney.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-money.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMoney() {
+         bgsoundMoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundMoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstophowdomakemoney").on('tap', function() {
+      if(!playing) {
+        howdomakemoneyaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        howdomakemoneyaudio.pause(); howdomakemoneyaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#howdomakemoneyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        howdomakemoneyaudio.pause();
+        paused = true;
+      } else {
+        howdomakemoneyaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#howdomakemoneyaudiofbtn").on('tap', function() {
+      var ctime = howdomakemoneyaudio.currentTime;
+      howdomakemoneyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#howdomakemoneyaudiobbtn").on('tap', function() {
+      var ctime = howdomakemoneyaudio.currentTime;
+      howdomakemoneyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#howdomakemoneyaudiopsbtn").on('tap', function() {
+      howdomakemoneyaudio.pause();
+    });
+	
+	$(".get_started").on('tap', function() {
+		  $.mobile.changePage("sub-money-how-do-you-make-money-production.html", {transition: "slide"});
+	  });	
+  </script>
+</div> <!--//home-->

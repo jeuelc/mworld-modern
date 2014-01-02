@@ -1,0 +1,166 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-crazy-ideas-jet-trains">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Jet Trains!</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="hovertrainlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Jet_Trains/Rocket_Train_Hi_Res.jpg', 'When the jet train was built it had to carry fuel with it everywhere that it went!  This could get heavy for long journeys!  Can you think of another reason that carrying fuel might be a bad idea? (Hulton Archive)');">click here</a>
+        
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Jet_Trains/Rocket_Power.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Jet_Trains/Rocket_Power_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Jet_Trains/Rocket_Power.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Jet_Trains/Rocket_Train.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>Taking it to the next level above propellers, in the 1960s, a rail road engineer attached jet engines to a train!  This beast reached just over 290 km/h and achieved a world record for the fastest self-propelled train.</p>
+		<p>But there was a big 'but'... aside from the obvious safety concerns of strapping jets to the back of a train, because both jet and propeller trains are self-propelled, they need to carry their own fuel.  So, they would either have to be bigger so they could store fuel, or they would have to keep on stopping to refuel on long journeys.  Carrying the fuel would also mean they'd be heavier and so there would be more resistance.</p>
+		<p>Sadly, these reasons are why we also don't have jet trains in the modern world. </p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopjettrains"></div></div>
+    <div class="btrains"><div class="rwtrains" id="jettrainsaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="jettrainsaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="jettrainsaudiofbtn"></div></div>
+    <div id="actualaudio-jettrains" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-jettrains').html('<audio id="jettrainsaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/jet_trains.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-crazy-ideas-jet-trains").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#hovertrainlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-crazy-ideas.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopjettrains").on('tap', function() {
+      if(!playing) {
+        jettrainsaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        jettrainsaudio.pause(); jettrainsaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#jettrainsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        jettrainsaudio.pause();
+        paused = true;
+      } else {
+        jettrainsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#jettrainsaudiofbtn").on('tap', function() {
+      var ctime = jettrainsaudio.currentTime;
+      jettrainsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#jettrainsaudiobbtn").on('tap', function() {
+      var ctime = jettrainsaudio.currentTime;
+      jettrainsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#jettrainsaudiopsbtn").on('tap', function() {
+      jettrainsaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

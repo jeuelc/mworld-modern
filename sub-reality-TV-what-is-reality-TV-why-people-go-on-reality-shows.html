@@ -1,0 +1,180 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-what-is-reality-TV-why-people-go-on-reality-shows">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Why Do People go on Reality TV?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="embarrassedlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV/Embarrassed_Hi_Res.jpg', 'Why do people go on reality TV?  Often people have to do silly or embarrassing things to stay on - so why do they do it?');">click here</a>
+		
+		<a id="selectionlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV/Selection_Hi_Res.jpg', 'Contestants for reality TV are chosen out of thousands of people.  Producers don\'t just think about their talent - their personality is just as important.');">click here</a>
+        
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV/True_False.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV/True_False_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV/True_False.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV/Embarrassed.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV/Selection.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentrealityTV">
+        <p>How would your life change if you suddenly became famous?</p>
+		<p>Many of us wonder why people want to go on reality television.</p>
+		<p>The answer on talent shows is clear: people want the chance to do what they love  perform.</p>
+		<p>But this can come at a price.  When Susan Boyle became an overnight YouTube success after appearing on <i>Britains Got Talent</i>, she soon discovered that she wasn't ready for fame, especially because audiences were more interested in her personal life than her brilliant voice.</p>
+		<p>All reality contestants must be ready for this intrusion.  It's possible that some people want to be on reality TV because they think you are only important in society if you appear in the media.</p>
+		<p>Everyone wants approval and reality TV can be a powerful way of getting recognition.  For some, just being noticed brings acceptance.</p>
+		<p>Would you want to appear on reality TV?  Why?</p>
+	  </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstoprealityshows"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="realityshowsaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="realityshowsaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="realityshowsaudiofbtn"></div></div>
+    <div id="actualaudio-realityshows" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-realityshows').html('<audio id="realityshowsaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Life_On_Show.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-reality-TV-what-is-reality-TV-why-people-go-on-reality-shows").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#embarrassedlink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#selectionlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV-what-is-reality-TV.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstoprealityshows").on('tap', function() {
+      if(!playing) {
+        realityshowsaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        realityshowsaudio.pause(); realityshowsaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#realityshowsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        realityshowsaudio.pause();
+        paused = true;
+      } else {
+        realityshowsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#realityshowsaudiofbtn").on('tap', function(){
+      var ctime = realityshowsaudio.currentTime;
+      realityshowsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#realityshowsaudiobbtn").on('tap', function(){
+      var ctime = realityshowsaudio.currentTime;
+      realityshowsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#realityshowsaudiopsbtn").on('tap', function(){
+      realityshowsaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

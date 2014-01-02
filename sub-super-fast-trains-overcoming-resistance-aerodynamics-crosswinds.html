@@ -1,0 +1,132 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-overcoming-resistance-aerodynamics-crosswinds">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Crosswinds - Don't Roll Over!</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="derailedlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Crosswinds/Derailed_Train_Hi_Res.jpg', 'Engineers need to make sure that their trains aren\'t too light or they might be tipped over by a big crosswind.');">click here</a>
+		
+        <a id="trainbyoceanlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Crosswinds/Train_By_Ocean_Hi_Res.jpg', 'Trains need to be carefully built, or a strong wind could turn them over!  High pressure from the wind, combined with low pressure on the opposite side of the train can cause them to derail!');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Crosswinds/Derailed_Train.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Crosswinds/Train_By_Ocean.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>High winds can be dangerous for super-fast trains.  Head-on winds can increase drag, but side-on winds, called 'crosswinds', could turn the whole train over!</p>
+		<p>This works just like pressure drag.  As the crosswind comes across the nose of the train, it separates on the side facing away from the wind.  So you have low pressure on that side, while there's high pressure on the side facing the wind.</p>
+		<p>What you end up with is a side-force on the train.    This pushes close to the roof, and this means something then happens around the wheels... what is it?</p>
+		<p>Well, it's called a rolling 'moment'.  A 'moment' is when a force, like the wind, acts like a lever around a certain spot.  If the rolling moment is large enough around the place where the wheel sits on the rail, the train can roll over! But super-fast trains are designed to have low side-force and balance their weight to make sure they can't roll over!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopcrosswinds"></div></div>
+    <div class="btrains"><div class="rwtrains" id="crosswindsaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="crosswindsaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="crosswindsaudiofbtn"></div></div>
+    <div id="actualaudio-crosswinds" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-crosswinds').html('<audio id="crosswindsaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/cross_winds.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-overcoming-resistance-aerodynamics-crosswinds").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#derailedlink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#trainbyoceanlink')[0].click();
+    }); 
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-overcoming-resistance-aerodynamics.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopcrosswinds").on('tap', function() {
+      if(!playing) {
+        crosswindsaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        crosswindsaudio.pause(); crosswindsaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#crosswindsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        crosswindsaudio.pause();
+        paused = true;
+      } else {
+        crosswindsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#crosswindsaudiofbtn").on('tap', function() {
+      var ctime = crosswindsaudio.currentTime;
+      crosswindsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#crosswindsaudiobbtn").on('tap', function() {
+      var ctime = crosswindsaudio.currentTime;
+      crosswindsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#crosswindsaudiopsbtn").on('tap', function() {
+      crosswindsaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

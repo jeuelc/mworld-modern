@@ -1,0 +1,130 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-becoming-reality-TV-celebrity">
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div id="beyondfamelink" style="position:absolute;left:150px;top:185px;width:100px;height:95px;"></div>
+  <div id="lifeonshowlink" style="position:absolute;left:815px;top:178px;width:117px;height:142px;"></div>
+  <div id="sellyourselflink" style="position:absolute;left:873px;top:529px;width:95px;height:106px;"></div>
+  <div id="thelooklink" style="position:absolute;left:64px;top:350px;width:117px;height:170px;"></div>
+  <div id="thestorylink" style="position:absolute;left:829px;top:409px;width:95px;height:107px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navrealityTV-Celebrity-content">
+        <p>We know that reality TV creates celebrities, but have you ever wondered how?</p>
+		<p>Lots of people complain about the amount of attention the media devote to celebrities who aren't talented, clever, or even very interesting.</p>
+		<p>But talented or not, all celebrities are good at one thing: catching your attention.  They do this by recognising the ingredients of fame that don't have much to do with special abilities.</p>
+		<p>Celebrities stay celebrities as long as audiences want to know more about them as people.  Strangely, this often doesn't have much to do with either audiences or celebrities; it's more to do with how the media offer us new and engaging ways to connect with the famous.  But if viewers choose not to watch a show, do you think it will keep being aired?</p>
+		<p>So, what does a celebrity need to have, apart from talent?  What sort of celebrity would you like to be?</p>
+    </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopbecomingcelebrity"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="becomingcelebrityaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="becomingcelebrityaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="becomingcelebrityaudiofbtn"></div></div>
+    <div id="actualaudio-becomingcelebrity" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-becomingcelebrity').html('<audio id="becomingcelebrityaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Becoming_Reality_Celebrity.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-reality-TV-becoming-reality-TV-celebrity").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('#beyondfamelink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-becoming-reality-TV-celebrity-beyond-fame.html", {transition: "slide"});
+    });
+    
+    $('#lifeonshowlink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-becoming-reality-TV-celebrity-life-on-show.html", {transition: "slide"});
+    });
+    
+    $('#sellyourselflink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-becoming-reality-TV-celebrity-sell-yourself.html", {transition: "slide"});
+    });
+    
+	$('#thelooklink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-becoming-reality-TV-celebrity-the-look.html", {transition: "slide"});
+    });
+	
+	$('#thestorylink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-becoming-reality-TV-celebrity-the-story.html", {transition: "slide"});
+    });
+	
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopbecomingcelebrity").on('tap', function() {
+      if(!playing) {
+        becomingcelebrityaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        becomingcelebrityaudio.pause(); becomingcelebrityaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#becomingcelebrityaudioplbtn").on('tap', function() {
+      if(!paused) {
+        becomingcelebrityaudio.pause();
+        paused = true;
+      } else {
+        becomingcelebrityaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#becomingcelebrityaudiofbtn").on('tap', function() {
+      var ctime = becomingcelebrityaudio.currentTime;
+      becomingcelebrityaudio.currentTime = ctime + 10;
+    });
+    
+    $("#becomingcelebrityaudiobbtn").on('tap', function() {
+      var ctime = becomingcelebrityaudio.currentTime;
+      becomingcelebrityaudio.currentTime = ctime - 10;
+    });
+    
+    $("#becomingcelebrityaudiopsbtn").on('tap', function() {
+      becomingcelebrityaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

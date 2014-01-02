@@ -1,0 +1,141 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-what-are-they-why-do-we-build-team">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Why Do We Build Them?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="wheelslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Why_Do_We_Build_Them/Passengers_Hi_Res.jpg', 'Did you know that travelling in trains can sometimes be even quicker than an aeroplane?  Security checks can take lots of time, and airports can be far away from the city that you want to visit.');">click here</a>
+		
+        <a id="gapslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Why_Do_We_Build_Them/View_Hi_Res.jpg', 'Some people prefer trains to flying so that they can get work done as they travel, while others just love to watch the scenery whizz past at 300 km/h!');">click here</a>
+		
+		<a id="pantographlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Why_Do_We_Build_Them/Environmentally_Friendly_Hi_Res.jpg', 'If you took a super-fast train from Amsterdam to Paris, it would only take a few minutes longer than travelling by plane and would emit around half the carbon dioxide per person, that means less smog in our air!');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Why_Do_We_Build_Them/Passengers.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Why_Do_We_Build_Them/View.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Why_Do_We_Build_Them/Environmentally_Friendly.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>People need to go places, some for business and some travelling on holiday.  Because super-fast trains are so fast, can carry so many people and usually travel to and from city centres, they are a popular way to get around.</p>
+		<p>Super-fast trains can carry about 800 people per train.  That's about the same number as the really huge aeroplanes can carry but more people than the more common jet liners.</p>
+		<p>Travelling by train is also convenient.  Some travellers like being able to keep track of their own luggage, and some even work when travelling, which makes super-fast trains ideal.   They're also a really good way to see the scenery close up as you travel!</p>
+		<p>Also, because the trains are powered by electricity, they have the potential to be 'green' and use renewable energy, so this makes them a potentially environmentally friendly way to travel.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopwhybuildteam"></div></div>
+    <div class="btrains"><div class="rwtrains" id="whybuildteamaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="whybuildteamaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="whybuildteamaudiofbtn"></div></div>
+    <div id="actualaudio-whybuildteam" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-whybuildteam').html('<audio id="whybuildteamaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/why_do_we_build_them.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-what-are-they-why-do-we-build-team").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#wheelslink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#gapslink')[0].click();
+    });
+	$("#pol3").on('tap', function() {
+      $('#pantographlink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-what-are-they.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopwhybuildteam").on('tap', function() {
+      if(!playing) {
+        whybuildteamaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        whybuildteamaudio.pause(); whybuildteamaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#whybuildteamaudioplbtn").on('tap', function() {
+      if(!paused) {
+        whybuildteamaudio.pause();
+        paused = true;
+      } else {
+        whybuildteamaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#whybuildteamaudiofbtn").on('tap', function() {
+      var ctime = whybuildteamaudio.currentTime;
+      whybuildteamaudio.currentTime = ctime + 10;
+    });
+    
+    $("#whybuildteamaudiobbtn").on('tap', function() {
+      var ctime = whybuildteamaudio.currentTime;
+      whybuildteamaudio.currentTime = ctime - 10;
+    });
+    
+    $("#whybuildteamaudiopsbtn").on('tap', function() {
+      whybuildteamaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

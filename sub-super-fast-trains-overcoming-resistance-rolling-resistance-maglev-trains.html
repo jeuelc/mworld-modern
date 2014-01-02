@@ -1,0 +1,177 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-overcoming-resistance-maglev-trains">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>MagLev Trains!</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="maglevdiagramlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Rolling_Resistance/MagLev_Trains/Maglev_Diagram_Hi_Res.jpg', '');">click here</a>
+		
+		<a id="magnetsbasicslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Rolling_Resistance/MagLev_Trains/Magnets_Basics_Hi_Res.jpg', '');">click here</a>
+        
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Rolling_Resistance/MagLev_Trains/Make_Your_Own_Maglev.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Rolling_Resistance/MagLev_Trains/Make_Your_Own_Maglev_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+          <div id="polb1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Rolling_Resistance/MagLev_Trains/Make_Your_Own_Maglev.png" alt="" />
+          </div>
+          <div id="polb2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Rolling_Resistance/MagLev_Trains/Maglev_Diagram.jpg" alt="" />
+          </div>
+		  <div id="polb3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Rolling_Resistance/MagLev_Trains/Magnets_Basics.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>A smart way to overcome rolling resistance is to have no contact between the wheels and rail!  But can you do that without magic?  Yes, you sure can!</p>
+		<p>MagLev, or 'magnetic levitation' technology levitates the train above magnetic rails.  You can feel the same thing if you try to push two magnets together with the same poles facing each other.</p>
+		<p>Not only do MagLev trains and tracks use magnets to keep the train above the track, they also use the magnets to move the train forwards!  With magnets the opposite sides attract.  So ahead of the train they aim the magnets to line up opposite poles, pulling the train forwards, while behind the train they align the same poles of the magnets to push the train forwards.</p>
+		<p>All MagLev tracks operate using the same principles, but the location of the magnets; on the train, on the track, or both, and type of magnets; electromagnets, superconducting magnets or permanent magnets, can change depending on the design.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopmaglevtrains"></div></div>
+    <div class="btrains"><div class="rwtrains" id="maglevtrainsaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="maglevtrainsaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="maglevtrainsaudiofbtn"></div></div>
+    <div id="actualaudio-maglevtrains" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#polb2').css("z-index", 2);
+      $('div#polb1').css("z-index", 1);
+      $('div#polb1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#polb2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#polb3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-maglevtrains').html('<audio id="maglevtrainsaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/maglev_trains.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-overcoming-resistance-maglev-trains").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#polb1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#polb1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#polb2").on('tap', function() {
+      $('#maglevdiagramlink')[0].click();
+    });
+	
+	$("#polb3").on('tap', function() {
+      $('#magnetsbasicslink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-overcoming-resistance-rolling-resistance.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopmaglevtrains").on('tap', function() {
+      if(!playing) {
+        maglevtrainsaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        maglevtrainsaudio.pause(); maglevtrainsaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#maglevtrainsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        maglevtrainsaudio.pause();
+        paused = true;
+      } else {
+        maglevtrainsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#maglevtrainsaudiofbtn").on('tap', function() {
+      var ctime = maglevtrainsaudio.currentTime;
+      maglevtrainsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#maglevtrainsaudiobbtn").on('tap', function() {
+      var ctime = maglevtrainsaudio.currentTime;
+      maglevtrainsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#maglevtrainsaudiopsbtn").on('tap', function() {
+      maglevtrainsaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogicb.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

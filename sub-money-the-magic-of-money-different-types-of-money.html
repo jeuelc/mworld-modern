@@ -1,0 +1,247 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-the-magic-of-money-different-types-of-money">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Different Types of Money</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<!-- will be triggered on pol3 -->
+        <a id="depositmoney" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Money_Types_Hi_Res.jpg', '');">click here</a>
+        
+		<!-- will be triggered on pol2 -->
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Deposit_Money.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Deposit_Money_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+			<!-- Read me -->
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Run_On_The_Bank.png" alt="" />
+          </div>
+		  <!-- quiz -->
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Deposit_Money.png" alt="" />
+          </div>
+		  <!-- image card -->
+		  <div id="pol3" class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money/Money_Types.jpg" alt="" />
+          </div>		  
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentMoney">
+		<p>How many 'M's are there in money?  Just one?  Perhaps not </p>
+
+		<p>Because there are different types of deposits, there are different ways that economists think of what money is.  </p>
+
+		<p>Three definitions often used are 'M1', 'M3' (there you are  two Ms!) and 'Broad Money'.  All these definitions include notes and coins in your hands, so that's always money!  However, M1 only includes current or cheque deposits with <a href="#tradingbanks" data-rel="popup">trading banks</a> (which allow quick and easy withdrawals). M3 includes current and <a href="#termdeposits" data-rel="popup">term deposits</a> with all banks.  Broad Money includes current and term deposits with all banks (not including money held in <a href="#nonbank" data-rel="popup">non-bank financial institutions</a>) plus borrowings by these organisations.</p>
+
+		<p>The majority of money is in the form of deposits... not notes and coins!  So if everyone in the economy were to withdraw their money from a bank at the same time, this would be known as a 'run on the bank' and the bank would run out of its cash reserves and go out of business!</p>
+      </div>
+		<div data-role="popup" id="tradingbanks" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+			<div id="node-pop">
+			<p>Trading Banks</p>
+			<p>These are banks that do not usually provide services to the general public.  Trading banks provide lines of credit to businesses and get collateral in return. </p>
+			<div>  <div class="defspeaker"  id="tradingbanks"> </div></div>
+			<audio id="tradingbanksaudio" controls preload onpause="playaudio()" onplay="pausebg()" style="visibility:hidden;"><source src="audio/Money/tradingbanks.mp3" type="audio/mpeg"></audio>
+			</div>
+		</div>
+		
+		<div data-role="popup" id="termdeposits" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+			<div id="node-pop">
+			<p>Term Deposits</p>
+			<p>A term deposit is when you give some money to the bank to hold for a fixed amount of time - usually six months or more.  You will get higher interest on this deposit, compared to money that is in your savings account, but you can't get your money back until the contract has ended.</p>
+			<div>  <div class="defspeaker"  id="termdeposits"> </div></div>
+			<audio id="termdepositsaudio" controls preload onpause="playaudio()" onplay="pausebg()" style="visibility:hidden;"><source src="audio/Money/termdeposits.mp3" type="audio/mpeg"></audio>
+			</div>
+		</div>
+
+		<div data-role="popup" id="nonbank" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+			<div id="node-pop">
+			<p>Non-Bank Financial Institutions</p>
+			<p>Non-Bank Financial Institutions are organisations like credit unions, insurance firms or currency exchanges.  These institutions do not have full banking licences and are not regulated by banking regulatory agencies. </p>
+			<div>  <div class="defspeaker"  id="nonbank"> </div></div>
+			<audio id="nonbankaudio" controls preload onpause="playaudio()" onplay="pausebg()" style="visibility:hidden;"><source src="audio/Money/nonbank.mp3" type="audio/mpeg"></audio>
+			</div>
+		</div>
+		
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar--> 
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopdifferenttypesofmoney"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="differenttypesofmoneyaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="differenttypesofmoneyaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="differenttypesofmoneyaudiofbtn"></div></div>
+    <div id="actualaudio-differenttypesofmoney" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-differenttypesofmoney').html('<audio id="differenttypesofmoneyaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/The_Magic_Of_Money.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-the-magic-of-money-different-types-of-money").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+
+	//card on click js
+		//poll1
+		$("#pol1").on('tap', function() {
+		  $.mobile.changePage("sub-money-the-magic-of-money-different-types-of-money-run-on-the-bank.html", {transition: "slide"});
+		});		
+		
+		//poll2
+			$(".returncard").on('tap', function() {
+			  $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"transform": "rotateY(0deg)"});
+			  setTimeout(function() {
+				$("#pol2").css({"visibility":"visible", "z-index":4});
+				$('#f1_container').css({"visibility":"hidden", "z-index":0});
+			  }, 1000);
+			});
+			
+			$("#pol2").on('tap', function() {
+			  $('#f1_container').css({"visibility":"visible", "z-index":10});
+			  $(this).css({"visibility":"hidden"});
+			  $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"transform": "rotateY(180deg)"});
+			});	
+			$('#falseans').on('tap', function() {
+			  alert("Wrong answer");
+			});
+			$('#trueans').on('tap', function() {
+			  alert("Correct answer");
+			});			
+		//poll3		
+		$("#pol3").on('tap', function() {
+		  $('#depositmoney')[0].click();
+		});	
+	//card on click js ends here
+
+
+
+
+
+
+
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-the-magic-of-money.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopdifferenttypesofmoney").on('tap', function() {
+      if(!playing) {
+        differenttypesofmoneyaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        differenttypesofmoneyaudio.pause(); differenttypesofmoneyaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#differenttypesofmoneyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        differenttypesofmoneyaudio.pause();
+        paused = true;
+      } else {
+        differenttypesofmoneyaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#differenttypesofmoneyaudiofbtn").on('tap', function() {
+      var ctime = differenttypesofmoneyaudio.currentTime;
+      differenttypesofmoneyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#differenttypesofmoneyaudiobbtn").on('tap', function() {
+      var ctime = differenttypesofmoneyaudio.currentTime;
+      differenttypesofmoneyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      differenttypesofmoneyaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+	//Definations
+       $( "#tradingbanks" ).bind({
+          popupafterclose: function(event, ui) { 
+                  tradingbanksaudio.pause(); 
+           }
+        });
+
+       $( "#termdeposits" ).bind({
+          popupafterclose: function(event, ui) { 
+                 termdepositsaudio.pause();
+           }
+      });
+	  $( "#nonbank" ).bind({
+          popupafterclose: function(event, ui) { 
+                 nonbankaudio.pause();
+           }
+      });		
+	//Definations ends here
+	
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

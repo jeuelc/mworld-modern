@@ -1,0 +1,107 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-what-is-money-store-of-value-electronic-banking">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+<div class="bptitleholder" style="padding-top:0px;"><h1>Electronic Banking - How Safe Is It?</h1></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navMoney-Electronic-Banking">
+		<p>Most money is made up of electronic entries, which show up as deposits in a bank statement. Electronic money can't be damaged by floods, or perish, and in some ways this makes it the safest way to store wealth.  But could it still be stolen?</p>
+
+		<p>Paper notes and coins (currency) might occasionally be stolen by a bunch of bank robbers who physically go into the bank and take it  but thefts from banks can also occur electronically.  Banks spend a lot of money to protect your deposit money from 'hackers' through special computer security and coding. </p>
+
+		<p>Some people say eventually we'll stop using notes and coins completely, and make all of our payments electronically.  What do you think?  Do you think there might be some places where people keep using notes and coins?  Why?</p>
+    </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopelectronicebanking"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="electronicebankingaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="electronicebankingaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="electronicebankingaudiofbtn"></div></div>
+    <div id="actualaudio-electronicebanking" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-electronicebanking').html('<audio id="electronicebankingaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Camels_Vs_Computers.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-what-is-money-store-of-value-electronic-banking").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMoney.pause(); bgsoundMoney.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-what-is-money-something-to-trade.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMoney() {
+         bgsoundMoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundMoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopelectronicebanking").on('tap', function() {
+      if(!playing) {
+        electronicebankingaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        electronicebankingaudio.pause(); electronicebankingaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#electronicebankingaudioplbtn").on('tap', function() {
+      if(!paused) {
+        electronicebankingaudio.pause();
+        paused = true;
+      } else {
+        electronicebankingaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#electronicebankingaudiofbtn").on('tap', function() {
+      var ctime = electronicebankingaudio.currentTime;
+      electronicebankingaudio.currentTime = ctime + 10;
+    });
+    
+    $("#electronicebankingaudiobbtn").on('tap', function() {
+      var ctime = electronicebankingaudio.currentTime;
+      electronicebankingaudio.currentTime = ctime - 10;
+    });
+    
+    $("#electronicebankingaudiopsbtn").on('tap', function() {
+      electronicebankingaudio.pause();
+    });
+	
+  </script>
+</div> <!--//home-->

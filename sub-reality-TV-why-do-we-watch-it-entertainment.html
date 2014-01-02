@@ -1,0 +1,131 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-why-do-we-watch-it-entertainment">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Entertainment</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="prankslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Entertainment/Entertainment_Hi_Res.jpg', 'Reality TV can teach us about some important issues - but only if they can keep us watching!');">click here</a>
+        <a id="skateboardlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Entertainment/Heroes_Hi_Res.jpg', 'It\'s easy to see that the heroes in this picture are characters, but in reality TV the contestants images are constructed just as carefully.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Entertainment/Entertainment.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Entertainment/Heroes.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentrealityTV">
+        <p>Imagine watching a TV show about factory workers that showed an entire day from start to finish.  You learn about how the machines work, what the workers do and what the factory makes.  Does it sound interesting?  Now imagine that in that day a worker got a promotion, and maybe two other workers had an argument and wouldn't work together again.  Would you want to watch that show?</p>
+		<p>It isn't enough that reality TV tells you about the world; it has to do it in an engaging way.  If it can keep your interest, reality TV can teach you about some really important issues like gender, nutrition, race or identity.  In particular, the characters have to be people that you care about and that sustain your interest.</p>
+		<p>And there has to be a story that viewers can become involved in, or you wont want to watch again!</p>
+		<p>Reality TV features conflict and competition.  Real people are there to play roles that support entertaining stories in the show.  By turning real people into characters, this makes them seem more real to viewers.  Whether we love these characters, or love to hate them, we engage with them, which is what brings us back to watch the show each week.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopentertainment"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="entertainmentaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="entertainmentaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="entertainmentaudiofbtn"></div></div>
+    <div id="actualaudio-entertainment" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-entertainment').html('<audio id="entertainmentaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Entertainment.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-reality-TV-why-do-we-watch-it-entertainment").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#prankslink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#skateboardlink')[0].click();
+    }); 
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopentertainment").on('tap', function() {
+      if(!playing) {
+        entertainmentaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        entertainmentaudio.pause(); entertainmentaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#entertainmentaudioplbtn").on('tap', function() {
+      if(!paused) {
+        entertainmentaudio.pause();
+        paused = true;
+      } else {
+        entertainmentaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#entertainmentaudiofbtn").on('tap', function() {
+      var ctime = entertainmentaudio.currentTime;
+      entertainmentaudio.currentTime = ctime + 10;
+    });
+    
+    $("#entertainmentaudiobbtn").on('tap', function() {
+      var ctime = entertainmentaudio.currentTime;
+      entertainmentaudio.currentTime = ctime - 10;
+    });
+    
+    $("#entertainmentaudiopsbtn").on('tap', function() {
+      entertainmentaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

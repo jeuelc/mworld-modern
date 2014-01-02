@@ -1,0 +1,130 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-crazy-ideas">
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Crazy Ideas!</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navtrains-content3">
+        <p>Ever since the first steam engines were invented people have been thinking of new ways to improve them.  Some ideas might sound crazy to begin with, like floating the train on magnets... but if you work it all out carefully and do it right, they can be successful, like the MagLev trains.</p>
+		<p>Other ideas sound crazy to begin with and unfortunately stay crazy...  Like, why not whack a propeller on the back of a train?  Even better, what about a jet engine!?</p>
+		<p>Or instead of magnets, what if we float the train above rails like a hovercraft?</p>
+		<p>Check out these wacky engineering ideas and think how you could make them suitable for production...  Maybe one day you'll come up with your own idea about how to make trains faster or safer!</p>
+      </div>
+        
+      <div class="navbtn1" style="top:420px;">
+        <p><a href="sub-super-fast-trains-crazy-ideas-half-train-plane.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Half_Train_Half_Plane.png"></a></p>
+      </div>
+      <div class="navbtn2" style="left:400px;">
+        <p><a href="sub-super-fast-trains-crazy-ideas-jet-trains.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Jet_Trains.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:420px;">
+        <p><a href="sub-super-fast-trains-crazy-ideas-floating-trains.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Crazy_Ideas/Floating_Trains.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopcrazyideas"></div></div>
+    <div class="btrains"><div class="rwtrains" id="crazyideasaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="crazyideasaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="crazyideasaudiofbtn"></div></div>
+    <div id="actualaudio-crazyideas" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-crazyideas').html('<audio id="crazyideasaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/crazy_ideas.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-super-fast-trains-crazy-ideas").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopcrazyideas").on('tap', function() {
+      if(!playing) {
+        crazyideasaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        crazyideasaudio.pause(); crazyideasaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#crazyideasaudioplbtn").on('tap', function() {
+      if(!paused) {
+        crazyideasaudio.pause();
+        paused = true;
+      } else {
+        crazyideasaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#crazyideasaudiofbtn").on('tap', function() {
+      var ctime = crazyideasaudio.currentTime;
+      crazyideasaudio.currentTime = ctime + 10;
+    });
+    
+    $("#crazyideasaudiobbtn").on('tap', function() {
+      var ctime = crazyideasaudio.currentTime;
+      crazyideasaudio.currentTime = ctime - 10;
+    });
+    
+    $("#crazyideasaudiopsbtn").on('tap', function() {
+      crazyideasaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+  </script>
+</div> <!--//home-->

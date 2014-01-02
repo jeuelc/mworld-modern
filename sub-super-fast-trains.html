@@ -1,0 +1,139 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Super Fast Trains</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navtrains-content">
+        <p>Do you like the idea of zooming across the countryside at up to 500 km/h?  What about speeding as fast as that while you're just metres from the ground, or even floating above it thanks to magnets?</p>
+		<p>Super-fast trains can move people from place to place over great distances safely, efficiently and quickly.</p>
+		<p>But how do they do it?  What makes them special?  What are the things we have to worry about when were going so fast?  Engineers have to overcome resistance, especially from the air, to get trains to the super-fast travelling speeds, and they also have to worry about wind from the trains blowing people over, and even sonic booms!</p>
+		<p>And what about the future of transport?  Vacuum tubes, flying trains... what next?</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-super-fast-trains-crazy-ideas.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/crazy_ideas.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-super-fast-trains-overcoming-resistance.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/overcoming_resistance.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-super-fast-trains-looking-future.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/looking_to_the_future.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-super-fast-trains-what-are-they.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/what_are_They.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtntrains" id="playstoptrains"></div></div>
+    <div class="btrains"><div class="rwtrains" id="trainsaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="trainsaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="trainsaudiofbtn"></div></div>
+    <div id="actualaudio-trains" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-trains').html('<audio id="trainsaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/super_fast_trains.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-super-fast-trains").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-modernworld.html", {transition: "slide", reverse: true });
+      bgsoundsuperfasttrains.pause(); 
+      bgsoundsuperfasttrains.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstoptrains").on('tap', function() {
+      if(!playing) {
+        trainsaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        trainsaudio.pause(); trainsaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#trainsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        trainsaudio.pause();
+        paused = true;
+      } else {
+        trainsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#trainsaudiofbtn").on('tap', function() {
+      var ctime = trainsaudio.currentTime;
+      trainsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#trainsaudiobbtn").on('tap', function() {
+      var ctime = trainsaudio.currentTime;
+      trainsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#trainsaudiopsbtn").on('tap', function() {
+      trainsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

@@ -1,0 +1,139 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Reality TV</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navrealityTV-content">
+        <p>Did you know that many British people think that the judge of UK's <i>X Factor</i>, Simon Cowell, would make a good Prime Minister?  Or that the Australian Prime Minister and opposition leader thought that <i>Big Brother</i> was so important that they BOTH appeared in the house before the 2013 election?</p>
+		<p>Reality TV is something that most of us see or hear about every single day.  It entertains us, makes people famous and can even change how we think about big issues like politics or nutrition.</p>
+		<p>But what is reality TV?  Why are we so interested in it?  And why is it so good at making people famous?</p>
+		<p>Tap on the links to raise the curtain on reality TV and find out how reality TV stars are made, and what they need to do to survive past 15 minutes of fame.</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-reality-TV-becoming-reality-TV-celebrity.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-reality-TV-create-your-own-celebrity.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Reality_TV/Create_Your_Own_Celebrity.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-reality-TV-what-is-reality-TV.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-reality-TV-why-do-we-watch-it.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstoprealityTV"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="realityTVaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="realityTVaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="realityTVaudiofbtn"></div></div>
+    <div id="actualaudio-realityTV" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-realityTV').html('<audio id="realityTVaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Reality_TV.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-super-fast-realityTV").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack(){
+      $.mobile.changePage("sub-modernworld.html", {transition: "slide", reverse: true });
+      bgsoundrealityTV.pause(); 
+      bgsoundrealityTV.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstoprealityTV").on('tap', function() {
+      if(!playing) {
+        realityTVaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        realityTVaudio.pause(); realityTVaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#realityTVaudioplbtn").on('tap', function() {
+      if(!paused) {
+        realityTVaudio.pause();
+        paused = true;
+      } else {
+        realityTVaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#realityTVaudiofbtn").on('tap', function() {
+      var ctime = realityTVaudio.currentTime;
+      realityTVaudio.currentTime = ctime + 10;
+    });
+    
+    $("#realityTVaudiobbtn").on('tap', function() {
+      var ctime = realityTVaudio.currentTime;
+      realityTVaudio.currentTime = ctime - 10;
+    });
+    
+    $("#realityTVaudiopsbtn").on('tap', function() {
+      realityTVaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

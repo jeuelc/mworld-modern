@@ -1,0 +1,111 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-how-do-you-make-money-production-sale-invest-to-grow-the-competition">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+<div class="bptitleholder" style="padding-top:0px;"><h1>The Competition</h1></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navMoney-the-competition">
+		<p>Another ice cream shop has opened up nearby!   They sell their ice creams for $3 each, and people are starting to buy from them instead! </p>
+
+		<p>Oh no!  Our revenue has gone down to $650! </p>
+
+		<p>What can we do to win our customers back and avoid going out of business?   We could lower our prices... Or develop something new! </p>
+    </div>  
+	<div class="get_started"></div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopthecompetition"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="thecompetitionaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="thecompetitionaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="thecompetitionaudiofbtn"></div></div>
+    <div id="actualaudio-thecompetition" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-thecompetition').html('<audio id="thecompetitionaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/The_Competition.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-how-do-you-make-money-production-sale-invest-to-grow-the-competition").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMoney.pause(); bgsoundMoney.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-how-do-you-make-money-production-sale-invest-to-grow.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMoney() {
+         bgsoundMoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundMoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopthecompetition").on('tap', function() {
+      if(!playing) {
+        thecompetitionaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        thecompetitionaudio.pause(); thecompetitionaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#thecompetitionaudioplbtn").on('tap', function() {
+      if(!paused) {
+        thecompetitionaudio.pause();
+        paused = true;
+      } else {
+        thecompetitionaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#thecompetitionaudiofbtn").on('tap', function() {
+      var ctime = thecompetitionaudio.currentTime;
+      thecompetitionaudio.currentTime = ctime + 10;
+    });
+    
+    $("#thecompetitionaudiobbtn").on('tap', function() {
+      var ctime = thecompetitionaudio.currentTime;
+      thecompetitionaudio.currentTime = ctime - 10;
+    });
+    
+    $("#thecompetitionaudiopsbtn").on('tap', function() {
+      thecompetitionaudio.pause();
+    });
+	
+	$(".get_started").on('tap', function() {
+		  $.mobile.changePage("sub-money-how-do-you-make-money-production-sale-invest-to-grow-the-competition-innovate.html", {transition: "slide"});
+	  });	
+  </script>
+</div> <!--//home-->

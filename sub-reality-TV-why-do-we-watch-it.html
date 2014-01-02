@@ -1,0 +1,130 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-why-do-we-watch-it">
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Why Do We Watch It?</h1></div>
+  <div id="didyouseeitlink" style="position:absolute;left:397px;top:495px;width:136px;height:76px;"></div>
+  <div id="entertainmentlink" style="position:absolute;left:116px;top:577px;width:121px;height:65px;"></div>
+  <div id="hangingoutlink" style="position:absolute;left:830px;top:286px;width:168px;height:160px;"></div>
+  <div id="mustseetvlink" style="position:absolute;left:120px;top:150px;width:220px;height:150px;"></div>
+  <div id="windowlink" style="position:absolute;left:180px;top:357px;width:122px;height:70px;"></div>
+  <div data-role="content" class="kidzcontent">
+  
+	<div class="navrealityTV-whydowewatch-content">
+        <p>Turn on your TV at any time of the day and you will probably be able to find one reality TV show or another.  You can hear about what's happening on reality TV on the radio or learn about it on the internet.  Results from talent contests or <i>Big Brother</i> evictions have even been reported as news!</p>
+		<p>Think about the different ways that you follow TV: do you follow your favourite shows on social media?  Do you talk about them with your friends the next day?</p>
+		<p>Sometimes you might feel like you would miss out on conversations or events if you didn't know about what was going on in a reality TV show.</p>
+		<p>The media has been bringing communities together for a long time now.  Ever since we invented the telegraph our ability to communicate has affected our connection with our community.  From friends that we see every day to people on the other side of the world.</p>
+    </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopwhydowatch"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="whydowatchaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="whydowatchaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="whydowatchaudiofbtn"></div></div>
+    <div id="actualaudio-whydowatch" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-whydowatch').html('<audio id="whydowatchaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Why_Do_we_Watch_It.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-reality-TV-why-do-we-watch-it").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('#didyouseeitlink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it-did-you-see-it.html", {transition: "slide"});
+    });
+    
+    $('#entertainmentlink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it-entertainment.html", {transition: "slide"});
+    });
+    
+    $('#hangingoutlink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it-hanging-out.html", {transition: "slide"});
+    });
+    
+	$('#mustseetvlink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it-must-see-TV.html", {transition: "slide"});
+    });
+	
+	$('#windowlink').on('tap', function() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it-window-to-the-world.html", {transition: "slide"});
+    });
+	
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopwhydowatch").on('tap', function() {
+      if(!playing) {
+        whydowatchaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        whydowatchaudio.pause(); whydowatchaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#whydowatchaudioplbtn").on('tap', function() {
+      if(!paused) {
+        whydowatchaudio.pause();
+        paused = true;
+      } else {
+        whydowatchaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#whydowatchaudiofbtn").on('tap', function() {
+      var ctime = whydowatchaudio.currentTime;
+      whydowatchaudio.currentTime = ctime + 10;
+    });
+    
+    $("#whydowatchaudiobbtn").on('tap', function() {
+      var ctime = whydowatchaudio.currentTime;
+      whydowatchaudio.currentTime = ctime - 10;
+    });
+    
+    $("#whydowatchaudiopsbtn").on('tap', function() {
+      whydowatchaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

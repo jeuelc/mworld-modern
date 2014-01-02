@@ -1,0 +1,177 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-why-do-we-watch-it-did-you-see-it">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Did You See It?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="rolemodelslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Did_You_See_It/Getting_Together_Hi_Res.jpg', 'People could watch television events at home by themselves, but we often find that they get together to do it together instead.  Why do you think that might be?');">click here</a>
+		
+		<a id="magazinestandlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Did_You_See_It/Times_Square_Hi_Res.jpg', 'People get together in public spaces like times square in America to watch big events like elections with the rest of the world.');">click here</a>
+        
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Did_You_See_It/Did_You_See_It.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Did_You_See_It/Did_You_See_It_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Did_You_See_It/Did_You_See_It.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Did_You_See_It/Getting_Together.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Did_You_See_It/Times_Square.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentrealityTV">
+        <p>Events like the Olympics, elections or religious ceremonies can bring a large number of people together at the same time, whether they choose to watch it live or sit together while watching on television.</p>
+		<P>But now, televisions aren't just in the living room.  You can watch television on your iPad, in your bedroom, on the train or bus, even in the bathroom!  So why do we still come together to watch important television events live?</p>
+		<p>You could record the final of your favourite show and watch it later, by yourself, but would you really want to?  Could you resist first finding out the result on Twitter?  Wouldn't you miss gossiping with your friends about what happened as it happened?</p>
+		<p>The success that reality TV has in bringing people together to watch the final episodes, eviction nights or special events tells us that we still enjoy coming together at the same place and time to share experiences.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopdidyouseeit"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="didyouseeitaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="didyouseeitaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="didyouseeitaudiofbtn"></div></div>
+    <div id="actualaudio-didyouseeit" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-didyouseeit').html('<audio id="didyouseeitaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Did_You_See_It.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-reality-TV-why-do-we-watch-it-did-you-see-it").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#rolemodelslink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#magazinestandlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopdidyouseeit").on('tap', function() {
+      if(!playing) {
+        didyouseeitaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        didyouseeitaudio.pause(); didyouseeitaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#didyouseeitaudioplbtn").on('tap', function() {
+      if(!paused) {
+        didyouseeitaudio.pause();
+        paused = true;
+      } else {
+        didyouseeitaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#didyouseeitaudiofbtn").on('tap', function() {
+      var ctime = didyouseeitaudio.currentTime;
+      didyouseeitaudio.currentTime = ctime + 10;
+    });
+    
+    $("#didyouseeitaudiobbtn").on('tap', function() {
+      var ctime = didyouseeitaudio.currentTime;
+      didyouseeitaudio.currentTime = ctime - 10;
+    });
+    
+    $("#didyouseeitaudiopsbtn").on('tap', function() {
+      didyouseeitaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

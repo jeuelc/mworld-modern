@@ -1,0 +1,130 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-why-do-we-watch-it-window-to-the-world">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Window To The World</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="hennalink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Window_To_The_World/Henna_hi_Res.jpg', 'Some people watch reality TV shows to learn about how other people live.  For example, are weddings the same in countries other than your own?');">click here</a>
+        <a id="protestlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Window_To_The_World/Protest_Hi_Res.jpg', 'If you change the way that a lot of people think about an issue you might change how the government acts.  Some people try to do this through protest.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Window_To_The_World/Henna.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Why_Do_We_Watch_It/Window_To_The_World/Protest.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentrealityTV">
+        <p>Why do people watch reality TV?  Well, its entertaining, but it can also teach you things.  Watching how other people live can teach you about different cultures, cooking shows can teach you about nutrition and that's just a start!  If you change the way that a lot of people in a country think, you can start to change how societies deal with important issues.  Let's think about Susan Boyle again.</p>
+		<p>When she appeared on <i>Britains Got Talent</i>, lots of public figures began talking about society's narrow attitudes about appearance.  This was because Susan was a middle-aged woman and it drew attention to the fact that there aren't many people like her on TV.</p>
+		<p>Even some politicians take notice of reality shows.  When TV chef Jamie Oliver made a series about helping school cooks to make healthier food, British members of Parliament started considering whether the country needed laws to protect kids from junk food.  Jamie made a similar show in the US, prompting some American education authorities to improve their school menus.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopwindowtoworld"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="windowtoworldaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="windowtoworldaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="windowtoworldaudiofbtn"></div></div>
+    <div id="actualaudio-windowtoworld" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-windowtoworld').html('<audio id="windowtoworldaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Window_To_The_World.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-reality-TV-why-do-we-watch-it-window-to-the-world").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#hennalink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#protestlink')[0].click();
+    }); 
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV-why-do-we-watch-it.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopwindowtoworld").on('tap', function() {
+      if(!playing) {
+        windowtoworldaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        windowtoworldaudio.pause(); windowtoworldaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#windowtoworldaudioplbtn").on('tap', function() {
+      if(!paused) {
+        windowtoworldaudio.pause();
+        paused = true;
+      } else {
+        windowtoworldaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#windowtoworldaudiofbtn").on('tap', function() {
+      var ctime = windowtoworldaudio.currentTime;
+      windowtoworldaudio.currentTime = ctime + 10;
+    });
+    
+    $("#windowtoworldaudiobbtn").on('tap', function() {
+      var ctime = windowtoworldaudio.currentTime;
+      windowtoworldaudio.currentTime = ctime - 10;
+    });
+    
+    $("#windowtoworldaudiopsbtn").on('tap', function() {
+      windowtoworldaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

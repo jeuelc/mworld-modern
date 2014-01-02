@@ -1,0 +1,138 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Money</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navMoney-content">
+        <p>People use money every day without much thought.  But it's really important to civilisation: without it, markets with buyers and sellers would not grow and evolve. Money helps people to interact with each other, whether it is buying and selling or borrowing and lending.</p>
+		<p>Did you know that when banks lend money to people, they actually produce more money!  How could that be true?</p>
+		<p>Money lets you trade from a long way away, for example buying things online, without swapping goods face-to-face.  Money lets you sell something to someone in one place today and buy something from someone else in another place tomorrow!  Money lets you to build wealth over time and is important for making profit.  'Money talks'!  Lets see how!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-money-what-is-money.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/What_Is_Money.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-money-the-magic-of-money.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-money-how-do-you-make-money.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/How_Do_You_Make_Money.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-money-making-profit.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/Making_Profit.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopMoney"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="Moneyaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="Moneyaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="Moneyaudiofbtn"></div></div>
+    <div id="actualaudio-Money" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Money').html('<audio id="Moneyaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Money_BG.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-modernworld.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopMoney").on('tap', function() {
+      if(!playing) {
+        Moneyaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Moneyaudio.pause(); Moneyaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Moneyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Moneyaudio.pause();
+        paused = true;
+      } else {
+        Moneyaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Moneyaudiofbtn").on('tap', function() {
+      var ctime = Moneyaudio.currentTime;
+      Moneyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Moneyaudiobbtn").on('tap', function() {
+      var ctime = Moneyaudio.currentTime;
+      Moneyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      Moneyaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

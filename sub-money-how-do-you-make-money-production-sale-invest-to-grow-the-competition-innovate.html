@@ -1,0 +1,113 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-how-do-you-make-money-production-sale-invest-to-grow-the-competition-innovate">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+<div class="bptitleholder" style="padding-top:0px;"><h1>Innovate!</h1></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navMoney-the-competition">
+		<p>We decided to develop a brand new recipe Roast Beef Ice Cream!</p>
+
+		<p>It costs a little more to produce, but no one has ever tried it before, it could be a sensation!
+		Or will it? </p>
+
+		<p>It turns out that there's a reason no one makes roast beef ice cream.  </p>
+
+		<p>No one buys our ice cream and we go out of business! </p>
+    </div>  
+	<div class="get_started"></div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopinnovate"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="innovateaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="innovateaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="innovateaudiofbtn"></div></div>
+    <div id="actualaudio-innovate" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-innovate').html('<audio id="innovateaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Innovate.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-how-do-you-make-money-production-sale-invest-to-grow-the-competition-innovate").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMoney.pause(); bgsoundMoney.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-how-do-you-make-money-production-sale-invest-to-grow-the-competition.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMoney() {
+         bgsoundMoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundMoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopinnovate").on('tap', function() {
+      if(!playing) {
+        innovateaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        innovateaudio.pause(); innovateaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#innovateaudioplbtn").on('tap', function() {
+      if(!paused) {
+        innovateaudio.pause();
+        paused = true;
+      } else {
+        innovateaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#innovateaudiofbtn").on('tap', function() {
+      var ctime = innovateaudio.currentTime;
+      innovateaudio.currentTime = ctime + 10;
+    });
+    
+    $("#innovateaudiobbtn").on('tap', function() {
+      var ctime = innovateaudio.currentTime;
+      innovateaudio.currentTime = ctime - 10;
+    });
+    
+    $("#innovateaudiopsbtn").on('tap', function() {
+      innovateaudio.pause();
+    });
+	$(".get_started").on('tap', function() {
+		  $.mobile.changePage("sub-money.html", {transition: "slide"});
+	  });
+  </script>
+</div> <!--//home-->

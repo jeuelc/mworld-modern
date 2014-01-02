@@ -1,0 +1,129 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-what-are-they">
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>What Are They?</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navtrains-content3">
+        <p>Super-fast trains help get people from one place to another fast!  They travel at speeds of at least 250 km/h and some can travel as fast as 500 km/h.  Thats as fast as some planes!  No wonder theyre also known as bullet trains in Japan.</p>
+		<p>Super-fast trains are used all around the world: throughout Europe, China and Japan, and soon to be in America.  They are most useful to move a large number of people between big cities that are a long way apart.</p>
+		<p>Most super-fast trains travel on the same rails as normal trains, but a small number float above rails using magnets! </p>
+      </div>
+        
+      <div class="navbtn1" style="top:420px;">
+        <p><a href="sub-super-fast-trains-what-are-they-up-close-and-personal.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Up_Close_And_Personal.png"></a></p>
+      </div>
+      <div class="navbtn2" style="left:400px;">
+        <p><a href="sub-super-fast-trains-what-are-they-how-can-they-go-so-fast.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/How_Do_They_Go_So_Fast.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:420px;">
+        <p><a href="sub-super-fast-trains-what-are-they-why-do-we-build-them.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/What_Are_They/Why_Do_We_Build_Them.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopwhatarethey"></div></div>
+    <div class="btrains"><div class="rwtrains" id="whataretheyaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="whataretheyaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="whataretheyaudiofbtn"></div></div>
+    <div id="actualaudio-whatarethey" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-whatarethey').html('<audio id="whataretheyaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/what_are_they.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-super-fast-trains-what-are-they").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopwhatarethey").on('tap', function() {
+      if(!playing) {
+        whataretheyaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        whataretheyaudio.pause(); whataretheyaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#whataretheyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        whataretheyaudio.pause();
+        paused = true;
+      } else {
+        whataretheyaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#whataretheyaudiofbtn").on('tap', function() {
+      var ctime = whataretheyaudio.currentTime;
+      whataretheyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#whataretheyaudiobbtn").on('tap', function() {
+      var ctime = whataretheyaudio.currentTime;
+      whataretheyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#whataretheyaudiopsbtn").on('tap', function() {
+      whataretheyaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+  </script>
+</div> <!--//home-->

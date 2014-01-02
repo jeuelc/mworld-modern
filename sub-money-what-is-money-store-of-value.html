@@ -1,0 +1,167 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-what-is-money-store-of-value">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Store of Value</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<!-- will be triggered on pol2 -->
+        <a id="chocolate" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/What_Is_Money/Store_Of_Value/Chocolate_Money_Hi_Res.png', 'Imagine if all of our wealth was stored in chocolate!  It would be delicious - but how long do you think it would last?  How would you keep it in your pocket on a hot day? ');">click here</a>
+        
+		<!-- will be triggered on pol3 -->
+        <a id="gold" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/What_Is_Money/Store_Of_Value/Gold_Standard_Hi_Res.jpg', 'Under the gold standard, banks exchange notes for preset quantities of gold.  They know how much money each gold bar is worth by looking at the markings which are engraved on it.');">click here</a>
+		<div id="zoomwrapper">
+			<!-- Read me -->
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/Store_Of_Value/Electronic_Banking.png" alt="" />
+          </div>
+		  <!-- image card -->
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/Store_Of_Value/Chocolate_Money.png" alt="" />
+          </div>
+		  <!-- image card -->
+		  <div id="pol3" class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/Store_Of_Value/Gold_Standard.jpg" alt="" />
+          </div>		  
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentMoney">
+		<p>Throughout history, money has mostly been in the form of metal coins such as gold, silver and bronze. The metals themselves had value, so these coins were known as 'commodity money'.  Anything with value can be commodity money, but it is a better idea to put your wealth in metals which would last, rather than in cattle or tobacco, which would be pretty hard to store and would perish over time!  </p>
+
+		<p>In the 19th and 20th centuries, some countries used 'representative money', a piece of paper that represented the value of metal.  You could exchange paper notes for gold at a fixed price.  This was called the 'Gold Standard'.   </p>
+
+		<p>Today, we have what's known as 'fiat' money: its value is assigned by government.  'Fiat' is Latin for 'let it be done!'  Fiat money lasts a long time and its easy to store, especially in the form of electronic deposits as shown on a bank statement. This encourages society to build up and store wealth over time. </p>
+      </div>
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar--> 
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopstoreofvalue"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="storeofvalueaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="storeofvalueaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="storeofvalueaudiofbtn"></div></div>
+    <div id="actualaudio-storeofvalue" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-storeofvalue').html('<audio id="storeofvalueaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Store_Of_Value.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-what-is-money-store-of-value").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+
+	//card on click js
+		//poll1
+		$("#pol1").on('tap', function() {
+		  $.mobile.changePage("sub-money-what-is-money-store-of-value-electronic-banking.html", {transition: "slide"});
+		});		
+		
+		//poll2
+		$("#pol2").on('tap', function() {
+		  $('#chocolate')[0].click();
+		});			
+		//poll3		
+		$("#pol3").on('tap', function() {
+		  $('#gold')[0].click();
+		});	
+	//card on click js ends here
+
+
+
+
+
+
+
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-what-is-money.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopstoreofvalue").on('tap', function() {
+      if(!playing) {
+        storeofvalueaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        storeofvalueaudio.pause(); storeofvalueaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#storeofvalueaudioplbtn").on('tap', function() {
+      if(!paused) {
+        storeofvalueaudio.pause();
+        paused = true;
+      } else {
+        storeofvalueaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#storeofvalueaudiofbtn").on('tap', function() {
+      var ctime = storeofvalueaudio.currentTime;
+      storeofvalueaudio.currentTime = ctime + 10;
+    });
+    
+    $("#storeofvalueaudiobbtn").on('tap', function() {
+      var ctime = storeofvalueaudio.currentTime;
+      storeofvalueaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      storeofvalueaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+	//Definations
+	//Definations ends here
+	
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

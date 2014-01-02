@@ -1,0 +1,174 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-overcoming-resistance-forces-and-motion">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Forces And Motion Explained</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="newtonlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Forces_And_Motion_Explained/Sir_Isaac_Newton_Hi_Res.jpg', 'Sir Isaac Newton was the first to explain the fundamental laws of forces and motion.  The laws that he explained apply to everything from an ant pushing a seed, to aeroplanes and rockets!');">click here</a>
+		
+		<a id="resistancelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Forces_And_Motion_Explained/Resistance_Hi_Res.jpg', 'What sorts of forces hold a super-fast train back?  Wheels bumping along the tracks can waste power.  But you might be surprised to know that when youre moving very fast the air can use up even more!');">click here</a>
+        
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Forces_And_Motion_Explained/Faster_Than_A_Speeding_Bullet_Train.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Forces_And_Motion_Explained/Faster_Than_A_Speeding_Bullet_Train_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Forces_And_Motion_Explained/Faster_Than_A_Speeding_Bullet_Train.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Forces_And_Motion_Explained/Sir_Isaac_Newton.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Forces_And_Motion_Explained/Resistance.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>Long before we even thought of travelling at 300 km/h, Sir Isaac Newton came up with three laws which would be vitally important to high speed travel.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopforcesandmotion"></div></div>
+    <div class="btrains"><div class="rwtrains" id="forcesandmotionaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="forcesandmotionaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="forcesandmotionaudiofbtn"></div></div>
+    <div id="actualaudio-forcesandmotion" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-forcesandmotion').html('<audio id="forcesandmotionaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/forces_and_motion.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-overcoming-resistance-forces-and-motion").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#newtonlink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#resistancelink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-overcoming-resistance", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopforcesandmotion").on('tap', function() {
+      if(!playing) {
+        forcesandmotionaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        forcesandmotionaudio.pause(); forcesandmotionaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#forcesandmotionaudioplbtn").on('tap', function() {
+      if(!paused) {
+        forcesandmotionaudio.pause();
+        paused = true;
+      } else {
+        forcesandmotionaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#forcesandmotionaudiofbtn").on('tap', function() {
+      var ctime = forcesandmotionaudio.currentTime;
+      forcesandmotionaudio.currentTime = ctime + 10;
+    });
+    
+    $("#forcesandmotionaudiobbtn").on('tap', function() {
+      var ctime = forcesandmotionaudio.currentTime;
+      forcesandmotionaudio.currentTime = ctime - 10;
+    });
+    
+    $("#forcesandmotionaudiopsbtn").on('tap', function() {
+      forcesandmotionaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

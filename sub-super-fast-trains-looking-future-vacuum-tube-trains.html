@@ -1,0 +1,131 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-looking-future-vacuum-tube-trains">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Vacuum Tube Trains</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="vacuumtubelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/The_Future/Vacuum_Tube_Trains/Vacuum_Tube_Train_Hi_Res.png', 'Resistance from the air can be a real hassle when you\'re going super-fast!  Some people think that if they could travel through less air trains would be more efficient.');">click here</a>
+        <a id="vacuumtubeslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/The_Future/Vacuum_Tube_Trains/Vacuum_Tubes_Hi_Res.jpg', 'This hover train uses fans to push air underneath itself to float on.  That takes a lot of energy.  What might happen if the train cant get enough lift? (Courtesy: Gamma-KeystoneYou can\'t take the air out of the whole world though!   Vacuum trains would need to travel through special tubes, and would levitate like hover trains.)');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/The_Future/Vacuum_Tube_Trains/Vacuum_Tube_Train.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/The_Future/Vacuum_Tube_Trains/Vacuum_Tubes.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>People are already talking about vacuum, or 'reduced pressure', tubes as a way to travel in the future.  Some science fiction movies show similar kinds of transport.  If you reduced the air in a tube, or took it out altogether, then there'd be little or no aerodynamic resistance.</p>
+		<p>Without aerodynamic resistance trains could move more efficiently and much faster.  In a vacuum, a train could travel even faster than a plane!  And it wouldn't matter if the train went faster than the speed of sound, because there would be no air to cause a sonic boom.</p>
+		<p>But looking after a vacuum tube would be a nightmare.  Even a tiny hole in the tube would let air in and mess up the system.  How could you make sure there was never any earthquake damage, or manufacturing faults?  It would be really difficult!</p>
+		<p>You would have to think about safety too, with the speed at which the train could travel.  A system like this would likely cost a lot too, even more than fast trains, which aren't cheap!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopvacuumtube"></div></div>
+    <div class="btrains"><div class="rwtrains" id="vacuumtubeaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="vacuumtubeaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="vacuumtubeaudiofbtn"></div></div>
+    <div id="actualaudio-vacuumtube" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-vacuumtube').html('<audio id="vacuumtubeaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/vacuum_tube_trains.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-looking-future-vacuum-tube-trains").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#vacuumtubelink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#vacuumtubeslink')[0].click();
+    }); 
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-looking-future.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopvacuumtube").on('tap', function() {
+      if(!playing) {
+        vacuumtubeaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        vacuumtubeaudio.pause(); vacuumtubeaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#vacuumtubeaudioplbtn").on('tap', function() {
+      if(!paused) {
+        vacuumtubeaudio.pause();
+        paused = true;
+      } else {
+        vacuumtubeaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#vacuumtubeaudiofbtn").on('tap', function() {
+      var ctime = vacuumtubeaudio.currentTime;
+      vacuumtubeaudio.currentTime = ctime + 10;
+    });
+    
+    $("#vacuumtubeaudiobbtn").on('tap', function() {
+      var ctime = vacuumtubeaudio.currentTime;
+      vacuumtubeaudio.currentTime = ctime - 10;
+    });
+    
+    $("#vacuumtubeaudiopsbtn").on('tap', function() {
+      vacuumtubeaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

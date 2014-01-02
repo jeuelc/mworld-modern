@@ -1,0 +1,108 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-what-is-money-something-to-trade-camels-vs-computers">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+<div class="bptitleholder" style="padding-top:0px;"><h1>Camels Vs Computers</h1></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navMoney-camels-vs-computers">
+		  <div class="navMoney-camels-vs-computers-upper-div" >
+				In a traditional bartering system, it would be hard to know what the thing you had to trade was worth.  For example, if a camel was worth 1000 apples and 10,000 apples were worth 5000 oranges and 20,000 oranges were worth two computers, then how many computers would a camel be worth?  Whaaaat?!  In the modern world with all the stuff we have,trying to measure value this 
+		  </div>
+		<div style="float:left;width: 391px;font-family: comic sans ms;">
+		way would be crazy, if not impossible!	Money lets you understand in a simple way what one thing is worth in relation to another.  In other words, it provides a common way to measure value, or a 'common unit of account'.  For example, if a camel is worth $700 and a computer is worth $2,100, then you could easily work out that a computer is worth three camels!
+		  </div>
+    </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopcamelsvscomputers"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="camelsvscomputersaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="camelsvscomputersaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="camelsvscomputersaudiofbtn"></div></div>
+    <div id="actualaudio-camelsvscomputers" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-camelsvscomputers').html('<audio id="camelsvscomputersaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Camels_Vs_Computers.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-what-is-money-something-to-trade-camels-vs-computers").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMoney.pause(); bgsoundMoney.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-what-is-money-something-to-trade.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMoney() {
+         bgsoundMoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundMoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopcamelsvscomputers").on('tap', function() {
+      if(!playing) {
+        camelsvscomputersaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        camelsvscomputersaudio.pause(); camelsvscomputersaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#camelsvscomputersaudioplbtn").on('tap', function() {
+      if(!paused) {
+        camelsvscomputersaudio.pause();
+        paused = true;
+      } else {
+        camelsvscomputersaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#camelsvscomputersaudiofbtn").on('tap', function() {
+      var ctime = camelsvscomputersaudio.currentTime;
+      camelsvscomputersaudio.currentTime = ctime + 10;
+    });
+    
+    $("#camelsvscomputersaudiobbtn").on('tap', function() {
+      var ctime = camelsvscomputersaudio.currentTime;
+      camelsvscomputersaudio.currentTime = ctime - 10;
+    });
+    
+    $("#camelsvscomputersaudiopsbtn").on('tap', function() {
+      camelsvscomputersaudio.pause();
+    });
+	
+  </script>
+</div> <!--//home-->

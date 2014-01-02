@@ -1,0 +1,141 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-overcoming-resistance-aerodynamics-powerful-gusts">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Powerful Gusts And Sonic Booms!</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="sonicboomlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Powerfull_Gusts/Sonic_Boom_Diagram_Hi_Res.jpg', '');">click here</a>
+		
+        <a id="tunnellink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Powerfull_Gusts/Tunnel_Hi_Res.jpg', 'Smooth, sleek trains aren\'t the only way to avoid sonic booms!  You can also change the entrance and exits of tunnels to make sure that the air doesn\'t get too squished together.');">click here</a>
+		
+		<a id="sonicjetlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Powerfull_Gusts/Sonic_Boom_Jet_Hi_Res.jpg', '');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Powerfull_Gusts/Sonic_Boom_Diagram.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Powerfull_Gusts/Tunnel.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Powerfull_Gusts/Sonic_Boom_Jet.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>The effect that air has on the train is what we call Drag.  But did you know the train also does something to the air?  The wake or 'slipstream' of a super-fast train can blow people or things over as it whizzes past!  So when you design the train you have to make sure the wake won't be too strong and wide.</p>
+		<p>Super-fast trains also cause a pressure wave that could even cause a sonic boom at the end of tunnels!</p>
+		<p>Pressure waves happen because high pressure at the nose of a train is followed by low pressure at the end.  This is because the air moves quickly around the body, but is not being pushed forward behind the train.  When the wave is squeezed into a tunnel, it gets all bunched up and accelerates in front of the train.</p>
+		<p>When the wave comes out of the tunnel, it spreads out again, and this causes the sonic BOOM!  Can you stop it?  Yes!  This is why trains have long slender noses, to reduce the size of the pressure wave.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstoppowerfullgusts"></div></div>
+    <div class="btrains"><div class="rwtrains" id="powerfullgustsaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="powerfullgustsaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="powerfullgustsaudiofbtn"></div></div>
+    <div id="actualaudio-powerfullgusts" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-powerfullgusts').html('<audio id="powerfullgustsaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/poweruful_gusts.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-overcoming-resistance-aerodynamics-powerful-gusts").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#sonicboomlink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#tunnellink')[0].click();
+    });
+	$("#pol3").on('tap', function() {
+      $('#sonicjetlink')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-overcoming-resistance-aerodynamics.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstoppowerfullgusts").on('tap', function() {
+      if(!playing) {
+        powerfullgustsaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        powerfullgustsaudio.pause(); powerfullgustsaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#powerfullgustsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        powerfullgustsaudio.pause();
+        paused = true;
+      } else {
+        powerfullgustsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#powerfullgustsaudiofbtn").on('tap', function() {
+      var ctime = powerfullgustsaudio.currentTime;
+      powerfullgustsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#powerfullgustsaudiobbtn").on('tap', function() {
+      var ctime = powerfullgustsaudio.currentTime;
+      powerfullgustsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#powerfullgustsaudiopsbtn").on('tap', function() {
+      powerfullgustsaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

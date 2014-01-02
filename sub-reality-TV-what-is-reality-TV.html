@@ -1,0 +1,130 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-what-is-reality-TV">
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>What Is Reality TV?</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navrealityTV-content3">
+        <p>How has television changed over the years?  Ask a parent or teacher what they think.</p>
+		<p>Back in the 1980s TV mostly featured actors, newsreaders, entertainers and sports stars  people who were famous for their skills and talents.  But today this isn't enough!  Reality TV shows present their contestants' personalities alongside their abilities.  In fact, someone might not need any special skill at all to become famous on reality TV.  Often, people on reality TV are judged for more than just their talent alone, for better or for worse.</p>
+		<p>For example in 2000, Gareth Gates was runner up in the UK's <i>Pop Idol</i> show.  He was a great singer. But he also suffered from stuttering.  When audiences watched him sing, they didn't admire just his voice.  They also admired his courage.  He was judged according to who he was, not just what he could do.</p>
+		<p>Reality TV draws us in with the promise that we will get to know who the contestants are.  We enjoy learning about the lives and personalities of people that we see onscreen.</p>
+      </div>
+        
+      <div class="navrealityTVbtn1" style="top:420px;">
+        <p><a href="sub-reality-TV-what-is-reality-TV-how-reality-TV-works.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/How_Does_Reality_TV_Work.png"></a></p>
+      </div>
+      <div class="navrealityTVbtn2" style="left:400px;">
+        <p><a href="sub-reality-TV-what-is-reality-TV-how-real-it-is.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/How_Real_It_Is.png"></a></p>
+      </div>
+      <div class="navrealityTVbtn3" style="top:420px;">
+        <p><a href="sub-reality-TV-what-is-reality-TV-why-people-go-on-reality-shows.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Reality_TV/What_Is_Reality_TV/Why_Do_People_Go_On_Reality_TV.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopwhatisrealityTV"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="whatisrealityTVaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="whatisrealityTVaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="whatisrealityTVaudiofbtn"></div></div>
+    <div id="actualaudio-whatisrealityTV" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-whatisrealityTV').html('<audio id="whatisrealityTVaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/What_Is_Reality_TV.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-reality-TV-what-is-reality-TV").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopwhatisrealityTV").on('tap', function() {
+      if(!playing) {
+        whatisrealityTVaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        whatisrealityTVaudio.pause(); whatisrealityTVaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#whatisrealityTVaudioplbtn").on('tap', function() {
+      if(!paused) {
+        whatisrealityTVaudio.pause();
+        paused = true;
+      } else {
+        whatisrealityTVaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#whatisrealityTVaudiofbtn").on('tap', function() {
+      var ctime = whatisrealityTVaudio.currentTime;
+      whatisrealityTVaudio.currentTime = ctime + 10;
+    });
+    
+    $("#whatisrealityTVaudiobbtn").on('tap', function() {
+      var ctime = whatisrealityTVaudio.currentTime;
+      whatisrealityTVaudio.currentTime = ctime - 10;
+    });
+    
+    $("#whatisrealityTVaudiopsbtn").on('tap', function() {
+      whatisrealityTVaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+  </script>
+</div> <!--//home-->

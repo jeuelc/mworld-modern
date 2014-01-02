@@ -1,0 +1,166 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-the-magic-of-money-why-put-money-in-bank">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Why Put Money In The Bank?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+		<!-- will be triggered on pol1 -->
+        <a id="moneyjar" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Why_Put_Money_In_The_Bank/Money_Jar_Hi_Res.jpg', 'People put money in the bank to save for things that they want, maybe a house or a car.  Sometimes they save \'just in case\'.  When you save your money in a bank, rather than in a moneybox, the bank puts it to work and earns you interest!');">click here</a>
+        
+		<!-- will be triggered on pol2 -->
+        <a id="accessingmoney" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Why_Put_Money_In_The_Bank/Accessing_Money_Hi_Res.jpg', 'Having money in the bank can make it easier to access and safer  you don\'t have to carry a lot of money around, but you can still buy things anywhere, anytime! ');">click here</a>
+		<div id="zoomwrapper">
+			<!-- image card -->
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Why_Put_Money_In_The_Bank/Money_Jar.jpg" alt="" />
+          </div>
+		  <!-- image card -->
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Why_Put_Money_In_The_Bank/Accessing_Money.jpg" alt="" />
+          </div>	  
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentMoney">
+			<p>Like all businesses, banks need to make a profit.  </p>
+
+			<p>To do this they need to lend money, but to lend money they need to attract new deposits so that they have money to lend.  They offer customers like you a little extra money in return for storing your money with them.  This is known as interest.</p> 
+
+			<p>People put their money in the bank to get interest and to keep their wealth safe.  If you have savings or cheque account deposits in a bank, you can quickly get access to your money to buy things through electronic payment systems such as EFTPOS and PayPal.</p>
+
+			<p>There is even a way that you can earn extra interest!  If you put your money in 'term deposits', the bank will pay higher interest to you, but you can't take your money out before the 'term' you've agreed to ends, for example three months.  If you do take the money out early, beware  the bank charges you a special fee, or 'penalty'. </p>
+
+			<p>People put money in the bank to help them save up to buy something substantial or expensive, like a house or a car, or a university fund.... What would you like to save up for?</p>
+      </div>
+
+		
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar--> 
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopwhyputmoneyinbank"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="whyputmoneyinbankaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="whyputmoneyinbankaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="whyputmoneyinbankaudiofbtn"></div></div>
+    <div id="actualaudio-whyputmoneyinbank" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-whyputmoneyinbank').html('<audio id="whyputmoneyinbankaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/Why_Put_Money_In_Bank.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-the-magic-of-money-why-put-money-in-bank").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+
+	//card on click js
+		//poll1
+		$("#pol1").on('tap', function() {
+		  $('#moneyjar')[0].click();
+		});			
+		
+		//poll2
+		$("#pol2").on('tap', function() {
+		  $('#accessingmoney')[0].click();
+		});			
+
+	//card on click js ends here
+
+
+
+
+
+
+
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-the-magic-of-money.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopwhyputmoneyinbank").on('tap', function() {
+      if(!playing) {
+        whyputmoneyinbankaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        whyputmoneyinbankaudio.pause(); whyputmoneyinbankaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#whyputmoneyinbankaudioplbtn").on('tap', function() {
+      if(!paused) {
+        whyputmoneyinbankaudio.pause();
+        paused = true;
+      } else {
+        whyputmoneyinbankaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#whyputmoneyinbankaudiofbtn").on('tap', function() {
+      var ctime = whyputmoneyinbankaudio.currentTime;
+      whyputmoneyinbankaudio.currentTime = ctime + 10;
+    });
+    
+    $("#whyputmoneyinbankaudiobbtn").on('tap', function() {
+      var ctime = whyputmoneyinbankaudio.currentTime;
+      whyputmoneyinbankaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      whyputmoneyinbankaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+	//Definations
+
+	//Definations ends here
+	
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

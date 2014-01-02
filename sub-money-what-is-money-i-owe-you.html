@@ -1,0 +1,195 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-what-is-money-i-owe-you">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_money.js"></script>
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>I Owe You!</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+
+        
+		<!-- will be triggered on pol1 -->
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Money/What_Is_Money/I_Owe_You/Money_In_The_Economy.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Money/What_Is_Money/I_Owe_You/Money_In_The_Economy_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position: absolute;left: 169px;top: 102px;width: 158px;height: 20px;"></div>
+			  <div class="falseans" style="position: absolute;left: 169px;top: 125px;width: 158px;height: 20px;"></div>
+			  <div class="falseans" style="position: absolute;left: 169px;top: 150px;width: 158px;height: 20px;"></div>
+              <div class="falseans" style="position: absolute;left: 169px;top: 175px;width: 158px;height: 20px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+		<!-- will be triggered on pol2 -->
+        <a id="collage" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Money/What_Is_Money/I_Owe_You/Collage_Hi_Res.jpg', '');">click here</a>
+		
+		<div id="zoomwrapper">
+			<!-- Read me -->
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/I_Owe_You/Money_In_The_Economy.png" alt="" />
+          </div>
+		  <!-- quiz -->
+          <div id="pol2" class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Money/What_Is_Money/I_Owe_You/Collage.jpg" alt="" />
+          </div>	  
+        </div><!--/zoomwrapper-->
+      </div>
+      <div class="bpcontentMoney">
+		<p>What happens if you want to buy something really expensive like a car or a house, but you don't have the money up front?  Sometimes, you can borrow from the bank.  Money is a convenient way to maintain accounts (that is, record how much you owe) and lets you defer payments (pay them back later in small amounts), making sure that lenders and borrowers do not lose.</p>
+
+		<p>Another example of how money works in this way is the receipt you get when you deposit money in the bank. This is a promise to you by the bank that they will give you the value of your deposits whenever you want it, just like an IOU!</p>
+      </div>	  
+  		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar--> 
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopioweyou"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="ioweyouaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="ioweyouaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="ioweyouaudiofbtn"></div></div>
+    <div id="actualaudio-ioweyou" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-ioweyou').html('<audio id="ioweyouaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/I_Owe_You.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-what-is-money-i-owe-you").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+
+	//card on click js
+		//poll1
+			$(".returncard").on('tap', function() {
+			  $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+			  $('#f1_card').css({"transform": "rotateY(0deg)"});
+			  setTimeout(function() {
+				$("#pol1").css({"visibility":"visible", "z-index":4});
+				$('#f1_container').css({"visibility":"hidden", "z-index":0});
+			  }, 1000);
+			});
+			
+			$("#pol1").on('tap', function() {
+			  $('#f1_container').css({"visibility":"visible", "z-index":10});
+			  $(this).css({"visibility":"hidden"});
+			  $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+			  $('#f1_card').css({"transform": "rotateY(180deg)"});
+			});	
+			$('.falseans').on('tap', function() {
+			  alert("Wrong answer");
+			});
+			$('#trueans').on('tap', function() {
+			  alert("Correct answer");
+			});			
+		//poll3		
+		$("#pol2").on('tap', function() {
+		  $('#collage')[0].click();
+		});	
+	//card on click js ends here
+
+
+
+
+
+
+
+    
+    function goBack() {
+      $.mobile.changePage("sub-money-the-magic-of-money.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopioweyou").on('tap', function() {
+      if(!playing) {
+        ioweyouaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        ioweyouaudio.pause(); ioweyouaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#ioweyouaudioplbtn").on('tap', function() {
+      if(!paused) {
+        ioweyouaudio.pause();
+        paused = true;
+      } else {
+        ioweyouaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#ioweyouaudiofbtn").on('tap', function() {
+      var ctime = ioweyouaudio.currentTime;
+      ioweyouaudio.currentTime = ctime + 10;
+    });
+    
+    $("#ioweyouaudiobbtn").on('tap', function() {
+      var ctime = ioweyouaudio.currentTime;
+      ioweyouaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      ioweyouaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+	//Definations
+
+	//Definations ends here
+	
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

@@ -1,0 +1,161 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-money-the-magic-of-money">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_money.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <link rel="stylesheet" href="css/style_money.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMoney"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMoney"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMoney"></div></div>
+  <div class="infobtnholder"><div class="infobtnMoney"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMoney"></div></div>
+  <div class="menubtnholder"><div class="menubtnMoney"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>The Magic Of Money</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navMoney-content">
+			<p>All coin and paper money is known as 'currency'.  The majority of money, though, is made up of 'deposits' at banks, which are electronic entries that show up on bank statements.</p>
+
+			<p>People put their money in banks to earn interest.  But it doesn't just sit there gathering dust  it gets put to work!  Banks lend out a certain fraction of those deposits to borrowers at higher interest and keep the rest as reserves. (Bankers call this 'fractional reserve banking'.)  This difference between interest paid by banks on deposits and higher interest received by banks from borrowers becomes bank profit.  So by lending money, banks create more money! </p> 
+
+			<p>It's important that banks keep some deposits in reserve, to give back to their customers when they need it.  If banks don't have enough money to pay back their customers they might go bankrupt!</p>
+
+			<p>The supply of money is controlled by the 'central bank' (run by the government). This bank can buy or sell <a href="#governmentbonds" data-rel="popup">'government bonds'</a> or they can tell the mint to print more coins or notes.</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-money-the-magic-of-money-making-money-by-lending.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Making_Money_By_Lending.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-money-the-magic-of-money-how-much-money-is-there.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/How_Much_Money_Is_There.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-money-the-magic-of-money-why-put-money-in-bank.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Why_Put_Money_In_The_Bank.png"></a></p>
+      </div>	  
+      <div class="navbtn4">
+        <p><a href="sub-money-the-magic-of-money-different-types-of-money.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Money/The_Magic_Of_Money/Different_Types_Of_Money.png"></a></p>
+      </div>
+	  
+		<div data-role="popup" id="governmentbonds" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+			<div id="node-pop">
+			<p>Government Bonds</p>
+			<p>Government bonds are special IOUs that you can buy from your government.  They say that the government owes you however much money is on the bond.</p>
+			<div>  <div class="defspeaker"  id="governmentbonds"> </div></div>
+			<audio id="governmentbondsaudio" controls preload onpause="playaudio()" onplay="pausebg()" style="visibility:hidden;"><source src="audio/Money/governmentbonds.mp3" type="audio/mpeg"></audio>
+			</div>
+		</div>
+
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnMoney" id="playstopthemagicofmoney"></div></div>
+    <div class="bMoney"><div class="rwMoney" id="themagicofmoneyaudiobbtn"></div></div>
+    <div class="plMoney"><div class="plpsMoney" id="themagicofmoneyaudioplbtn"></div></div>
+    <div class="fMoney"><div class="fwMoney" id="themagicofmoneyaudiofbtn"></div></div>
+    <div id="actualaudio-themagicofmoney" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-themagicofmoney').html('<audio id="themagicofmoneyaudio" controls preload onpause="playsMoney()" onplay="pauseMoney()"><source src="audio/Money/The_Magic_Of_Money.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-money-the-magic-of-money").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundmoney.pause(); bgsoundmoney.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-modernworld.html", {transition: "slide", reverse: true });
+      bgsoundmoney.pause(); 
+      bgsoundmoney.currentTime = 0;
+      modernsoundbg.play();
+    }
+    
+    function playsMoney() {
+         bgsoundmoney.play();
+    }
+       
+    function pauseMoney() {
+         bgsoundmoney.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopthemagicofmoney").on('tap', function() {
+      if(!playing) {
+        themagicofmoneyaudio.play();
+        $('.micbtnMoney').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        themagicofmoneyaudio.pause(); themagicofmoneyaudio.currentTime = 0;
+        $('.micbtnMoney').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#themagicofmoneyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        themagicofmoneyaudio.pause();
+        paused = true;
+      } else {
+        themagicofmoneyaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#themagicofmoneyaudiofbtn").on('tap', function() {
+      var ctime = themagicofmoneyaudio.currentTime;
+      themagicofmoneyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#themagicofmoneyaudiobbtn").on('tap', function() {
+      var ctime = themagicofmoneyaudio.currentTime;
+      themagicofmoneyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Moneyaudiopsbtn").on('tap', function() {
+      themagicofmoneyaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+	//Definations
+       $( "#governmentbonds" ).bind({
+          popupafterclose: function(event, ui) { 
+                  governmentbondsaudio.pause(); 
+           }
+        });
+	//Definations ends here
+  </script>
+</div> <!--//home-->

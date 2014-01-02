@@ -1,0 +1,130 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-reality-TV-becoming-reality-TV-celebrity-beyond-fame">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_reality_TV.js"></script>
+  <link rel="stylesheet" href="css/style_reality_TV.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnrealityTV"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnrealityTV"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnrealityTV"></div></div>
+  <div class="infobtnholder"><div class="infobtnrealityTV"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnrealityTV"></div></div>
+  <div class="menubtnholder"><div class="menubtnrealityTV"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Beyond 15 Minutes of Fame</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="prankslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/Beyond_15_Minutes_Of_Fame/Pranks_Hi_Res.jpg', 'Have you ever played a prank on a friend?  One celebrity, Bam Margera, has made a whole career out of playing tricks on his friends and family.');">click here</a>
+        <a id="skateboardlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/Beyond_15_Minutes_Of_Fame/SkateBoarding_Hi_Res.jpg', 'Bam Margera is a talented skateboarder - but this isn\'t why he is famous.  It is more to do with his charisma and personality than anything else.');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/Beyond_15_Minutes_Of_Fame/Pranks.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Reality_TV/Becoming_A_Reality_TV_Celebrity/Beyond_15_Minutes_Of_Fame/SkateBoarding.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentrealityTV">
+        <p>Keeping your career going is a concern for all celebrities, whether they have talent or don't.  In either case, success depends on an ability to tailor your public image to suit the changing needs of international media industries.</p>
+		<p>Jackass star Bam Margera is an interesting example of how this works.  Margera started life as a professional skateboarder who got into the habit of recording his tricks on a camcorder, just at the time MTV was switching its focus from music to reality television. These videos became the basis for a series of reality prank shows: Jackass, Viva La Bam and Bam's Unholy Union.</p>
+		<p>All of these shows are about Margera being an ordinary person and having fun with his friends. Ingeniously, however, Margera has been able to sell this same reality format to different industries; film, television, video games and satellite radio.  His personality appeals to lots of different types of people, so he can keep selling his shows in different formats.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnrealityTV" id="playstopbeyondfame"></div></div>
+    <div class="brealityTV"><div class="rwrealityTV" id="beyondfameaudiobbtn"></div></div>
+    <div class="plrealityTV"><div class="plpsrealityTV" id="beyondfameaudioplbtn"></div></div>
+    <div class="frealityTV"><div class="fwrealityTV" id="beyondfameaudiofbtn"></div></div>
+    <div id="actualaudio-beyondfame" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-beyondfame').html('<audio id="beyondfameaudio" controls preload onpause="playsRealityTV()" onplay="pauseRealityTV()"><source src="audio/Reality_TV/Beyond_Fame.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-reality-TV-becoming-reality-TV-celebrity-beyond-fame").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundrealityTV.pause(); bgsoundrealityTV.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#prankslink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#skateboardlink')[0].click();
+    }); 
+    function goBack() {
+      $.mobile.changePage("sub-reality-TV-becoming-reality-TV-celebrity.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsrealityTV(){
+         bgsoundrealityTV.play();
+    }
+       
+    function pauserealityTV(){
+         bgsoundrealityTV.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopbeyondfame").on('tap', function() {
+      if(!playing) {
+        beyondfameaudio.play();
+        $('.micbtnrealityTV').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        beyondfameaudio.pause(); beyondfameaudio.currentTime = 0;
+        $('.micbtnrealityTV').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#beyondfameaudioplbtn").on('tap', function() {
+      if(!paused) {
+        beyondfameaudio.pause();
+        paused = true;
+      } else {
+        beyondfameaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#beyondfameaudiofbtn").on('tap', function() {
+      var ctime = beyondfameaudio.currentTime;
+      beyondfameaudio.currentTime = ctime + 10;
+    });
+    
+    $("#beyondfameaudiobbtn").on('tap', function() {
+      var ctime = beyondfameaudio.currentTime;
+      beyondfameaudio.currentTime = ctime - 10;
+    });
+    
+    $("#beyondfameaudiopsbtn").on('tap', function() {
+      beyondfameaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

@@ -1,0 +1,130 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-overcoming-resistance-aerodynamics-pressure-drag">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Pressure Drag</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="pressuredraglink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Pressure_Drag/Pressure_Drag_Hi_Res.jpg', 'As a train or car pushes through the air, it experiences high pressure on the nose (pushing backwards), and low pressure on its tail (pulling backwards).  This means that air can slow you down a lot!');">click here</a>
+        <a id="smoketrainlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Pressure_Drag/Smoke_Train_Hi_Res.png', 'This is a test that engineers do to make sure that their trains can slip smoothly through the air.  If the smoke sticks close to the top of the train they can know that the train has a good design!');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Pressure_Drag/Pressure_Drag.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Pressure_Drag/Smoke_Train.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontenttrains">
+        <p>When a super-fast train is driving on a calm day, it is running into still air so the nose of the train experiences high pressure.  Like when you run really fast, you can feel the pressure from the wind on your face!</p>
+		<p>The train punches a hole through the still air as it travels, so that behind the tail there is disturbed, turbulent air known as the train's wake.  The air is turbulent because the air flow has separated from the train near the tail and is no longer moving smoothly over the surface.  We call this 'flow separation'.  Where the flow has separated, low pressure exists, so there is low pressure on the trains tail.</p>
+		<p>Because there is high pressure on the nose, and low pressure on the tail, the result is a force that acts against the direction the train is travelling; this is pressure drag. </p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtntrains" id="playstoppressuredrag"></div></div>
+    <div class="btrains"><div class="rwtrains" id="pressuredragaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="pressuredragaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="pressuredragaudiofbtn"></div></div>
+    <div id="actualaudio-pressuredrag" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-pressuredrag').html('<audio id="pressuredragaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/pressure_drag.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-super-fast-trains-overcoming-resistance-aerodynamics-pressure-drag").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $('#pressuredraglink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#smoketrainlink')[0].click();
+    }); 
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-overcoming-resistance-aerodynamics.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstoppressuredrag").on('tap', function() {
+      if(!playing) {
+        pressuredragaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        pressuredragaudio.pause(); pressuredragaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#pressuredragaudioplbtn").on('tap', function() {
+      if(!paused) {
+        pressuredragaudio.pause();
+        paused = true;
+      } else {
+        pressuredragaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#pressuredragaudiofbtn").on('tap', function() {
+      var ctime = pressuredragaudio.currentTime;
+      pressuredragaudio.currentTime = ctime + 10;
+    });
+    
+    $("#pressuredragaudiobbtn").on('tap', function() {
+      var ctime = pressuredragaudio.currentTime;
+      pressuredragaudio.currentTime = ctime - 10;
+    });
+    
+    $("#pressuredragaudiopsbtn").on('tap', function() {
+      pressuredragaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

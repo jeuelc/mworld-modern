@@ -1,0 +1,134 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-super-fast-trains-overcoming-resistance-aerodynamics">
+  <script src="js/slidebar_super_fast_trains.js"></script>
+  <link rel="stylesheet" href="css/style_super_fast_trains.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtntrains"></div></div>
+  <div class="mpbtnholder"><div class="mpbtntrains"></div></div>
+  <div class="cpbtnholder"><div class="cpbtntrains"></div></div>
+  <div class="infobtnholder"><div class="infobtntrains"></div></div>
+  <div class="credsbtnholder"><div class="credsbtntrains"></div></div>
+  <div class="menubtnholder"><div class="menubtntrains"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Aerodynamics</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navtrains-content">
+        <p>Aerodynamics is how the train interacts with the air around it.  Resistance due to air (aerodynamic resistance) is also known as drag.  A super-fast train experiences two types of drag: 'pressure drag' and 'skin friction'.</p>
+		<p>Pressure drag is the resistance to pushing the train's shape through the air, so the nose, tail and body shape are really important!  (this is why pressure drag is also known as 'form drag') Pointy trains are easier to push through the air than a square one would be!</p>
+		<p>Skin friction is the resistance the train's surface experiences as it slides through the air.Extra aerodynamic effects that are also important are how the train reacts to gusts of wind, and how the train can causes its own wind gusts and pressure waves.</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-super-fast-trains-overcoming-resistance-aerodynamics-pressure-drag.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Pressure_Drag.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-super-fast-trains-overcoming-resistance-aerodynamics-skin-frictions.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Skin_Friction.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-super-fast-trains-overcoming-resistance-aerodynamics-powerful-gusts.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Powerful_Gusts_And_Sonic_Booms.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-super-fast-trains-overcoming-resistance-aerodynamics-crosswinds.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Super_Fast_Trains/Overcoming_Resistance/Aerodynamics/Crosswinds_Donot_Roll_Over.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtntrains" id="playstopaerodynamics"></div></div>
+    <div class="btrains"><div class="rwtrains" id="aerodynamicsaudiobbtn"></div></div>
+    <div class="pltrains"><div class="plpstrains" id="aerodynamicsaudioplbtn"></div></div>
+    <div class="ftrains"><div class="fwtrains" id="aerodynamicsaudiofbtn"></div></div>
+    <div id="actualaudio-aerodynamics" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-aerodynamics').html('<audio id="aerodynamicsaudio" controls preload onpause="playstrains()" onplay="pausetrains()"><source src="audio/Super_Fast_Trains/aerodynamics.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-super-fast-trains-overcoming-resistance-aerodynamics").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfasttrains.pause(); bgsoundsuperfasttrains.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-super-fast-trains-overcoming-resistance.html", {transition: "slide", reverse: true });
+    }
+    
+    function playstrains() {
+         bgsoundsuperfasttrains.play();
+    }
+       
+    function pausetrains() {
+         bgsoundsuperfasttrains.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopaerodynamics").on('tap', function() {
+      if(!playing) {
+        aerodynamicsaudio.play();
+        $('.micbtntrains').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        aerodynamicsaudio.pause(); aerodynamicsaudio.currentTime = 0;
+        $('.micbtntrains').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#aerodynamicsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        aerodynamicsaudio.pause();
+        paused = true;
+      } else {
+        aerodynamicsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#aerodynamicsaudiofbtn").on('tap', function() {
+      var ctime = aerodynamicsaudio.currentTime;
+      aerodynamicsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#aerodynamicsaudiobbtn").on('tap', function() {
+      var ctime = aerodynamicsaudio.currentTime;
+      aerodynamicsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#aerodynamicsaudiopsbtn").on('tap', function() {
+      aerodynamicsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->
