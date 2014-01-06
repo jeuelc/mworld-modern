@@ -1,0 +1,143 @@
+<div data-role="page" id="sub-megacities-why-do-we-have-them">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_megacities.js"></script>
+  <link rel="stylesheet" href="css/style_megacities.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnMegacities"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnMegacities"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnMegacities"></div></div>
+  <div class="infobtnholder"><div class="infobtnMegacities"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnMegacities"></div></div>
+  <div class="menubtnholder"><div class="menubtnMegacities"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Why do we have them?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+
+		
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Megacities/Why_Do_We_Have_Them/S9_imgc1_Hi_Res.jpg', 'Refugees flee fighting by walking into Monrovia, Liberia. (Photo: Chris Hondros/Getty Images)');">click here</a>
+		
+        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Megacities/Why_Do_We_Have_Them/S9_imgc2_Hi_Res.jpg', 'City crowd.');">click here</a>
+
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Megacities/Why_Do_We_Have_Them/Rich_And_Poor_Megacities.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Megacities/Why_Do_We_Have_Them/S9_imgc1.jpg" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Megacities/Why_Do_We_Have_Them/S9_imgc2.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentMegacities">
+			<p>The reason megacities exist is explained by the way that the world's population is moving into cities. This is called 'urbanisation'.  It is only since 2008 that more people in the world have lived in cities than in smaller towns and villages.  The growth of megacities is part of this new pattern where people move from the countryside into large cities.</p>
+
+			<p>They move for lots of different reasons.  Some farming areas and small villages can no longer feed everyone, so people have to move because they do not have enough land or water to grow food.  People are sometimes threatened by war or fighting and are forced to move.</p>
+
+			<p>Most people go to cities so they can earn more money and perhaps be able to send their children to school or find somewhere better to live.  When cities get very big, they tend to attract even more people and growth, and this is why some cities become so enormous we call them megacities.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnMegacities" id="playstopWhyDoWeHaveThem"></div></div>
+    <div class="bMegacities"><div class="rwMegacities" id="WhyDoWeHaveThemaudiobbtn"></div></div>
+    <div class="plMegacities"><div class="plpsMegacities" id="WhyDoWeHaveThemaudioplbtn"></div></div>
+    <div class="fMegacities"><div class="fwMegacities" id="WhyDoWeHaveThemaudiofbtn"></div></div>
+    <div id="actualaudio-WhyDoWeHaveThem" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WhyDoWeHaveThem').html('<audio id="WhyDoWeHaveThemaudio" controls preload onpause="playsMegaCities()" onplay="pauseMegaCities()"><source src="audio/Megacities/Why_Do_We_Have_Them.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-megacities-why-do-we-have-them").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundMegaCities.pause(); bgsoundMegaCities.currentTime = 0;});
+    
+    $("#pol1").on('tap', function() {
+      $.mobile.changePage("sub-megacities-why-do-we-have-them-rich-and-poor-megacities.html", {transition: "slide"});
+    });
+    $("#pol2").on('tap', function() {
+      $('#img1')[0].click();
+    });
+	$("#pol3").on('tap', function() {
+      $('#img2')[0].click();
+    });
+    function goBack() {
+      $.mobile.changePage("sub-megacities.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsMegaCities() {
+         bgsoundMegaCities.play();
+    }
+       
+    function pauseMegaCities() {
+         bgsoundMegaCities.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopWhyDoWeHaveThem").on('tap', function() {
+      if(!playing) {
+        WhyDoWeHaveThemaudio.play();
+        $('.micbtnMegacities').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WhyDoWeHaveThemaudio.pause(); WhyDoWeHaveThemaudio.currentTime = 0;
+        $('.micbtnMegacities').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WhyDoWeHaveThemaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WhyDoWeHaveThemaudio.pause();
+        paused = true;
+      } else {
+        WhyDoWeHaveThemaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WhyDoWeHaveThemaudiofbtn").on('tap', function() {
+      var ctime = WhyDoWeHaveThemaudio.currentTime;
+      WhyDoWeHaveThemaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WhyDoWeHaveThemaudiobbtn").on('tap', function() {
+      var ctime = WhyDoWeHaveThemaudio.currentTime;
+      WhyDoWeHaveThemaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WhyDoWeHaveThemaudiopsbtn").on('tap', function() {
+      WhyDoWeHaveThemaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

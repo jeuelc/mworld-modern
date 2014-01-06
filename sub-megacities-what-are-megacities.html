@@ -23,7 +23,7 @@
 	</div>
 	<style>
 
-		.what_are_megacities{
+		.where_are_megacities{
 			height: 201px;
 			width: 200px;
 			position: absolute;
@@ -60,7 +60,7 @@
 		}
 
 	</style>
-	<div class="what_are_megacities">
+	<div class="where_are_megacities">
 	</div>
 	<div class="life_in_megacity">
 	</div>
@@ -95,7 +95,7 @@
       playing = false;
       paused = true;
       if(sound.canPlayType('audio/mpeg')) {
-        $('#actualaudio-WhatAreMegacities').html('<audio id="WhatAreMegacitiesaudio" controls preload onpause="playsMegaCities()" onplay="pauseMegacities()"><source src="audio/Megacities/What_Are_Megacities.mp3" type="audio/mpeg"></audio>');
+        $('#actualaudio-WhatAreMegacities').html('<audio id="WhatAreMegacitiesaudio" controls preload onpause="playsMegaCities()" onplay="pauseMegaCities()"><source src="audio/Megacities/What_Are_Megacities.mp3" type="audio/mpeg"></audio>');
       } 
     
       $("#sub-megacities-what-are-megacities").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
@@ -105,8 +105,8 @@
 	
 	
 		
-	$('.what_are_megacities').on('tap', function() {
-      $.mobile.changePage("sub-megacities-what-are-megacities-", {transition: "slide"});
+	$('.where_are_megacities').on('tap', function() {
+      $.mobile.changePage("sub-megacities-what-are-megacities-where-are-megacities.html", {transition: "slide"});
     });
 	$('.life_in_megacity').on('tap', function() {
       $.mobile.changePage("sub-megacities-what-are-megacities-whats-life-like-in-a-megacity.html", {transition: "slide"});

@@ -1,5 +1,5 @@
 /* Main common basic pages */
-#sub-megacities, #sub-megacities-daily-life-megacity-mayors,#sub-megacities-daily-life-the-life-of-a-bcak-driver,#sub-megacities-daily-life-megacity-mayors-water,#sub-megacities-the-future-cable-car-in-rio-de-janeiro,#sub-megacities-the-future-floating-school-in-lagos,#sub-megacities-the-future-growing-food-in-the-city,#sub-megacities-the-future-here-to-stay{
+#sub-megacities, #sub-megacities-daily-life-megacity-mayors,#sub-megacities-daily-life-the-life-of-a-bcak-driver,#sub-megacities-daily-life-megacity-mayors-water,#sub-megacities-the-future-cable-car-in-rio-de-janeiro,#sub-megacities-the-future-floating-school-in-lagos,#sub-megacities-the-future-growing-food-in-the-city,#sub-megacities-the-future-here-to-stay,#sub-megacities-what-are-megacities-case-study-sao-paulo,#sub-megacities-what-are-megacities-how-fast-do-they-grow,#sub-megacities-what-are-megacities-what-do-they-look-like,#sub-megacities-what-are-megacities-whats-life-like-in-a-megacity,#sub-megacities-what-are-megacities-where-are-megacities,#sub-megacities-why-do-we-have-them, #sub-megacities-why-do-we-have-them-rich-and-poor-megacities{
   background:url('images/9-12/The_Modern_World/Megacities/Megacities_BG.jpg') no-repeat;
   height:748px !important;
   overflow:hidden !important;
@@ -220,7 +220,7 @@
 /* custom page clickable divs ends here */
 
 /* Common Header Div Design */
-#sub-megacities .bptitleholder, #sub-megacities-daily-life-megacity-mayors .bptitleholder, #sub-megacities-daily-life-the-life-of-a-bcak-driver .bptitleholder,#sub-megacities-daily-life-megacity-mayors-water .bptitleholder, #sub-megacities-the-future-cable-car-in-rio-de-janeiro .bptitleholder,#sub-megacities-the-future-floating-school-in-lagos .bptitleholder,#sub-megacities-the-future-growing-food-in-the-city .bptitleholder,#sub-megacities-the-future-here-to-stay .bptitleholder{
+#sub-megacities .bptitleholder, #sub-megacities-daily-life-megacity-mayors .bptitleholder, #sub-megacities-daily-life-the-life-of-a-bcak-driver .bptitleholder,#sub-megacities-daily-life-megacity-mayors-water .bptitleholder, #sub-megacities-the-future-cable-car-in-rio-de-janeiro .bptitleholder,#sub-megacities-the-future-floating-school-in-lagos .bptitleholder,#sub-megacities-the-future-growing-food-in-the-city .bptitleholder,#sub-megacities-the-future-here-to-stay .bptitleholder,#sub-megacities-what-are-megacities-case-study-sao-paulo .bptitleholder,#sub-megacities-what-are-megacities-how-fast-do-they-grow .bptitleholder, #sub-megacities-what-are-megacities-what-do-they-look-like .bptitleholder,#sub-megacities-what-are-megacities-whats-life-like-in-a-megacity .bptitleholder,#sub-megacities-what-are-megacities-where-are-megacities .bptitleholder,#sub-megacities-why-do-we-have-them .bptitleholder,#sub-megacities-why-do-we-have-them-rich-and-poor-megacities .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -280,7 +280,7 @@
 
 
 /* Common Header Design h1 */
-#sub-megacities .bptitleholder h1,#sub-megacities-daily-life-megacity-mayors .bptitleholder h1,#sub-megacities-daily-life-the-life-of-a-bcak-driver .bptitleholder h1,#sub-megacities-daily-life-megacity-mayors-water .bptitleholder h1,#sub-megacities-the-future-cable-car-in-rio-de-janeiro .bptitleholder h1,#sub-megacities-the-future-floating-school-in-lagos .bptitleholder h1,#sub-megacities-the-future-growing-food-in-the-city .bptitleholder h1,#sub-megacities-the-future-here-to-stay .bptitleholder h1{
+#sub-megacities .bptitleholder h1,#sub-megacities-daily-life-megacity-mayors .bptitleholder h1,#sub-megacities-daily-life-the-life-of-a-bcak-driver .bptitleholder h1,#sub-megacities-daily-life-megacity-mayors-water .bptitleholder h1,#sub-megacities-the-future-cable-car-in-rio-de-janeiro .bptitleholder h1,#sub-megacities-the-future-floating-school-in-lagos .bptitleholder h1,#sub-megacities-the-future-growing-food-in-the-city .bptitleholder h1,#sub-megacities-the-future-here-to-stay .bptitleholder h1,#sub-megacities-what-are-megacities-case-study-sao-paulo .bptitleholder h1,#sub-megacities-what-are-megacities-how-fast-do-they-grow .bptitleholder h1,#sub-megacities-what-are-megacities-what-do-they-look-like .bptitleholder h1,#sub-megacities-what-are-megacities-whats-life-like-in-a-megacity .bptitleholder h1,#sub-megacities-what-are-megacities-where-are-megacities .bptitleholder h1,#sub-megacities-why-do-we-have-them .bptitleholder h1,#sub-megacities-why-do-we-have-them-rich-and-poor-megacities .bptitleholder h1{
 	text-transform: uppercase;
 	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
