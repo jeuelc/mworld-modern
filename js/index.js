@@ -762,7 +762,7 @@ function playsRealityTV() { bgsoundrealityTV.play(); $(".audiopanel").css({"back
 
 /************************ Money *******************************/
 var bgsoundmoney = new Audio();
-bgsoundmoney.src = "audio/Reality_TV/Reality_TV_BG.mp3";
+bgsoundmoney.src = "audio/Money/Money_BG.mp3";
 bgsoundmoney.addEventListener('ended', function() { bgsoundmoney.play(); });
 
 function pauseMoney() { bgsoundmoney.pause() }
