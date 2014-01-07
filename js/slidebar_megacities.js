@@ -8,7 +8,7 @@ $('.homebtnholder').on('tap', function() {
 
 $('.cpbtnholder').on('tap', function() {
   $.mobile.changePage("controlpanel.html");
-  mainaudiobg.play(); bgsoundmegacities.pause(); bgsoundmegacities.currentTime = 0; 
+  mainaudiobg.play(); bgsoundMegaCities.pause(); bgsoundMegaCities.currentTime = 0; 
 });
 
 $('.menubtnMegacities').on('tap', function() {
