@@ -834,3 +834,11 @@ bgsoundMegaCities.addEventListener('ended', function() { bgsoundMegaCities.play(
 
 function pauseMegaCities() { bgsoundMegaCities.pause() }
 function playsMegaCities() { bgsoundMegaCities.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
+
+/************************ Challenges Of Our Time *******************************/
+var bgsoundChallengesOfOurTime = new Audio();
+bgsoundChallengesOfOurTime.src = "audio/Challenges_Of_Our_Time/Challenges_Of_Our_Time_BG.mp3";
+bgsoundChallengesOfOurTime.addEventListener('ended', function() { bgsoundChallengesOfOurTime.play(); });
+
+function pauseChallengesOfOurTime() { bgsoundChallengesOfOurTime.pause() }
+function playsChallengesOfOurTime() { bgsoundChallengesOfOurTime.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }

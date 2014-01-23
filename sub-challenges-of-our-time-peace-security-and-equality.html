@@ -1,0 +1,133 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-peace-security-and-equality">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Peace, Security and Equality</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navChallengesOfOurTime-content3">
+		<p>The world is, mostly, a beautiful, amazing place, and people have created some amazing art, music, movies, theatre, scientific discoveries and more.  But people sometimes create problems and very unpleasant things too, such as war, violence and discrimination.</p>
+
+		<p>Water and food are basic necessities for life, but so are peace and security.  War might be fun in a computer game, but it's not fun in real life!</p>
+
+		<p>If you just listened to the media, it might seem like the world is full of war and conflict.  But in reality most of the world is more secure than at any other time in human history.</p>
+
+		<p>Equality has also improved in many societies over the past 100 years.  But there are still many places where people are punished, or have fewer rights than other people, because of the way they look, or what they believe, or because they are female. </p>
+			  </div>
+       
+       <div class="navbtn1" style="top:420px;">
+        <p><a href="sub-challenges-of-our-time-peace-security-and-equality-war-on-the-decline.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/War_On_The_Decline.png"></a></p>
+      </div>
+      <div class="navbtn2" style="left:400px;">
+        <p><a href="sub-challenges-of-our-time-peace-security-and-equality-equality.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/Equality.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:420px;">
+        <p><a href="sub-challenges-of-our-time-peace-security-and-equality-making-it-better.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/Making_It_Better.png"></a></p>
+      </div>
+ 
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopPeaceSecurityAndEquality"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="PeaceSecurityAndEqualityaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="PeaceSecurityAndEqualityaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="PeaceSecurityAndEqualityaudiofbtn"></div></div>
+    <div id="actualaudio-PeaceSecurityAndEquality" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-PeaceSecurityAndEquality').html('<audio id="PeaceSecurityAndEqualityaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Peace_Security_And_Equality.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-peace-security-and-equality").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopPeaceSecurityAndEquality").on('tap', function() {
+      if(!playing) {
+        PeaceSecurityAndEqualityaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        PeaceSecurityAndEqualityaudio.pause(); PeaceSecurityAndEqualityaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#PeaceSecurityAndEqualityaudioplbtn").on('tap', function() {
+      if(!paused) {
+        PeaceSecurityAndEqualityaudio.pause();
+        paused = true;
+      } else {
+        PeaceSecurityAndEqualityaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#PeaceSecurityAndEqualityaudiofbtn").on('tap', function() {
+      var ctime = PeaceSecurityAndEqualityaudio.currentTime;
+      PeaceSecurityAndEqualityaudio.currentTime = ctime + 10;
+    });
+    
+    $("#PeaceSecurityAndEqualityaudiobbtn").on('tap', function() {
+      var ctime = PeaceSecurityAndEqualityaudio.currentTime;
+      PeaceSecurityAndEqualityaudio.currentTime = ctime - 10;
+    });
+    
+    $("#PeaceSecurityAndEqualityaudiopsbtn").on('tap', function() {
+      PeaceSecurityAndEqualityaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+  </script>
+</div> <!--//home-->

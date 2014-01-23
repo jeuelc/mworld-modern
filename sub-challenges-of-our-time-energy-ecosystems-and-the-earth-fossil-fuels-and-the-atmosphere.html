@@ -1,0 +1,151 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Fossil Fuels and the Atmosphere</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">      
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere/Fossils_Hi_Res.png', 'Fossil fuels are made from the remains of animals and plants that have been buried deep under the earth for thousands of years.  The pressure and heat so deep down turns these fossils into oil and gas.  But this process takes a very, very long time and right now we use these fuels faster than the Earth can create them.');">click here</a>
+        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere/Greenhouse_Effect_Hi_Res.png', 'When we burn fossil fuels like oil and gas we create a lot of \'greenhouse gases\'.  These gases, like carbon dioxide and methane add to our atmosphere.  Small amounts of these gases in our atmosphere can help to trap heat from the sun and keep us warm, but too much and we might bake!');">click here</a>
+        <a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere/Fossil_Fuels_Hi_Res.png', 'We mine fossil fuels from deep within the earth to fuel our cars, factories and machinery.  With a population of 9 billion we need a lot of fossil fuels every day!  Lots of scientists are working hard to find other sources of energy that we might use.');">click here</a>		
+        <div id="zoomwrapper">
+          <div id="pol1"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere/Dealing_With_Climate_Change.png" alt="" />
+          </div>		
+          <div id="pol2" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere/Fossils.png" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere/Greenhouse_Effect.png" alt="" />
+          </div>		  
+          <div id="pol4"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere/Fossil_Fuels.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+		  <div class="bpcontentChallengesOfOurTime">
+				<p>Coal, oil and natural gas provide the fuel for most of the cars, trains, planes, buses and power stations on the Earth.  We call these fossil fuels because they were formed from the fossils of plants and animals that died a long time ago.</p>
+
+				<p>Fossil fuels emit various chemicals into the Earth's atmosphere when they are burned.  The atmosphere is vital to life on Earth.  It protects the Earth from cosmic rays, meteors and other objects from outer space.  It also acts like a blanket and traps some of the heat that is reflected from the Earth, keeping the Earth much warmer than Mars, for example.</p>
+
+				<p>If we emit too many chemicals into the atmosphere then the blanket effect might increase and make the Earth warmer than it is now.  If this happens, ice in Antarctica and on land near the Arctic would melt and lead to rises in the levels of the world's oceans.  A warmer Earth might have other serious effects, such as an increase in severe storms and making it harder to grow food in some places.</p>
+		  </div>		
+      </div>
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopFossilFuelsAndTheAtmosphere"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="FossilFuelsAndTheAtmosphereaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="FossilFuelsAndTheAtmosphereaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="FossilFuelsAndTheAtmosphereaudiofbtn"></div></div>
+    <div id="actualaudio-FossilFuelsAndTheAtmosphere" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('#watchLavaFlowholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('#watchMtTungurahuaholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FossilFuelsAndTheAtmosphere').html('<audio id="FossilFuelsAndTheAtmosphereaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Fossil_Fuels_And_The_Atmosphere.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-energy-ecosystems-and-the-earth.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFossilFuelsAndTheAtmosphere").on('tap', function() {
+      if(!playing) {
+        FossilFuelsAndTheAtmosphereaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FossilFuelsAndTheAtmosphereaudio.pause(); FossilFuelsAndTheAtmosphereaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FossilFuelsAndTheAtmosphereaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FossilFuelsAndTheAtmosphereaudio.pause();
+        paused = true;
+      } else {
+        FossilFuelsAndTheAtmosphereaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FossilFuelsAndTheAtmosphereaudiofbtn").on('tap', function() {
+      var ctime = FossilFuelsAndTheAtmosphereaudio.currentTime;
+      FossilFuelsAndTheAtmosphereaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FossilFuelsAndTheAtmosphereaudiobbtn").on('tap', function() {
+      var ctime = FossilFuelsAndTheAtmosphereaudio.currentTime;
+      FossilFuelsAndTheAtmosphereaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FossilFuelsAndTheAtmosphereaudiopsbtn").on('tap', function() {
+      FossilFuelsAndTheAtmosphereaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+	
+    $("#pol1").on('tap', function() {
+      $.mobile.changePage("sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere-dealing-with-climate-change.html", { transition: "slide" });
+    });
+    $("#pol2").on('tap', function() {
+      $('#img1')[0].click();
+    });	
+	    $("#pol3").on('tap', function() {
+      $('#img2')[0].click();
+    });	
+	    $("#pol4").on('tap', function() {
+      $('#img3')[0].click();
+    });	
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

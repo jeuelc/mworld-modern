@@ -1,0 +1,139 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-energy-ecosystems-and-the-earth">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Energy, Ecosystems and the Earth</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navChallengesOfOurTime-content">
+		<p>Have you been to a national park in your country?  A jungle, forest, mountain range or coral reef perhaps?  Nature is beautiful, right?</p>
+
+			<p>The natural world is not just beautiful, it provides us with food and water, ingredients for medicine, and the energy that fuels our cars, trains, planes and homes.  Nature also gives you places to visit and enjoy and provides inspiration for artists and musicians.  Nature truly is precious.</p>
+
+			<p>Nature is also fragile.  If you use too many resources from a forest, for example, the forest's ecosystem might collapse.  That means there might not be enough nutrients left in the soil for the trees, or food for the birds and animals.  The forest might wither and die.</p>
+
+			<p>When we burn coal, oil and gas to create heat and energy, we use precious resources and we emit chemicals that can pollute the Earth's atmosphere.  But there is good news too; nature also provides sources of energy like waves and wind that are renewable and that don't create any pollutants. </p>
+      </div>
+       
+      <div class="navbtn1">
+        <p><a href="sub-challenges-of-our-time-energy-ecosystems-and-the-earth-healthy-ecosystems.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Healthy_Ecosystems.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Fossil_Fuels_And_The_Atmosphere.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-challenges-of-our-time-energy-ecosystems-and-the-earth-renewable-energy.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-challenges-of-our-time-energy-ecosystems-and-the-earth-solutions.html" data-transition="slide"><img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Solutions.png"></a></p>
+      </div>        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopEnergyEcosystemsEarth"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="EnergyEcosystemsEarthaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="EnergyEcosystemsEarthaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="EnergyEcosystemsEarthaudiofbtn"></div></div>
+    <div id="actualaudio-EnergyEcosystemsEarth" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-EnergyEcosystemsEarth').html('<audio id="EnergyEcosystemsEarthaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-energy-ecosystems-and-the-earth").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopEnergyEcosystemsEarth").on('tap', function() {
+      if(!playing) {
+        EnergyEcosystemsEarthaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        EnergyEcosystemsEarthaudio.pause(); EnergyEcosystemsEarthaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#EnergyEcosystemsEarthaudioplbtn").on('tap', function() {
+      if(!paused) {
+        EnergyEcosystemsEarthaudio.pause();
+        paused = true;
+      } else {
+        EnergyEcosystemsEarthaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#EnergyEcosystemsEarthaudiofbtn").on('tap', function() {
+      var ctime = EnergyEcosystemsEarthaudio.currentTime;
+      EnergyEcosystemsEarthaudio.currentTime = ctime + 10;
+    });
+    
+    $("#EnergyEcosystemsEarthaudiobbtn").on('tap', function() {
+      var ctime = EnergyEcosystemsEarthaudio.currentTime;
+      EnergyEcosystemsEarthaudio.currentTime = ctime - 10;
+    });
+    
+    $("#EnergyEcosystemsEarthaudiopsbtn").on('tap', function() {
+      EnergyEcosystemsEarthaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->
