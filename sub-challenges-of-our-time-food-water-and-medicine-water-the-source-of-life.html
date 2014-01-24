@@ -1,0 +1,154 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-food-water-and-medicine-water-the-source-of-life">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Water, the Source of Life</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">    
+
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Water_The_Source_Of_Life/River_Hi_Res.jpg', 'This river looks clear and clean, but how would you know what\'s upstream?  Drinking water that is not clean can get you very, very sick.');">click here</a>
+        
+		<a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Water_The_Source_Of_Life/Collecting_Wate_Hi_Res.jpg', 'Can you imagine having to walk kilometres every day to collect heavy barrels of water to drink?  This is a reality for many people in our society.');">click here</a>
+		
+		<a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Water_The_Source_Of_Life/Improved_Sanitation_Hi_Res.jpg', 'Improved sanitation means that you can go to the tap for clean water, use a toilet if you need to poo and clean yourself in a shower or bath.  Can you imagine not having any of these things?');">click here</a>		
+        <div id="zoomwrapper">
+			<!-- Quiz -->
+			<div id="pol1"class="pPiece" style="left:70px;top:270px;">
+				<img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Water_The_Source_Of_Life/River.png" alt="" />
+			</div>
+			
+			<!-- Image -->
+			  <div id="pol2" class="pPiece" style="left:100px;top:270px;">
+				 <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Water_The_Source_Of_Life/Collecting_Wate.png" alt="" />
+			  </div>
+			
+			<!-- Image -->
+			  <div id="pol3"class="pPiece" style="left:75px;top:290px;">
+				 <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Water_The_Source_Of_Life/Improved_Sanitation.png" alt="" />
+			  </div>
+        </div><!--/zoomwrapper-->
+		  <div class="bpcontentChallengesOfOurTime">
+				<p>You know that you need to drink water to survive.  You could just go down to a river and drink there.  But what if the river is polluted?  You would get very sick.</p>
+
+				<p>So you need to capture the water and treat it first.  That means getting rid of the bugs and pollution in the water that would make you sick.  Then you need to transport it to where people live and add pipes and taps so people can use it  lots of work to do!</p>
+
+				<p>From 1990 to 2010, more than two billion people gained access to clean water, but there are many people who still dont have access to clean water.</p>
+
+				<p>There are also 2.5 billion people who don't have access to improved sanitation.  That means they dont do poo in a toilet  they have to find somewhere else to do it!</p>
+
+				<p>We need water for drinking, sanitation, farming, transport, bathing, gardens and more... water really is the source of life!</p>
+		  </div>		
+      </div>
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopWaterTheSourceOfLife"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="WaterTheSourceOfLifeaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="WaterTheSourceOfLifeaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="WaterTheSourceOfLifeaudiofbtn"></div></div>
+    <div id="actualaudio-WaterTheSourceOfLife" style="visibility:hidden;"></div>
+  <!--</div>-->
+
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WaterTheSourceOfLife').html('<audio id="WaterTheSourceOfLifeaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Water_The_Source_Of_Life.mp3" type="audio/mpeg"></audio>');
+      }
+      $("#sub-challenges-of-our-time-food-water-and-medicine-water-the-source-of-life").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-food-water-and-medicine.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopWaterTheSourceOfLife").on('tap', function() {
+      if(!playing) {
+        WaterTheSourceOfLifeaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WaterTheSourceOfLifeaudio.pause(); WaterTheSourceOfLifeaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WaterTheSourceOfLifeaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WaterTheSourceOfLifeaudio.pause();
+        paused = true;
+      } else {
+        WaterTheSourceOfLifeaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WaterTheSourceOfLifeaudiofbtn").on('tap', function() {
+      var ctime = WaterTheSourceOfLifeaudio.currentTime;
+      WaterTheSourceOfLifeaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WaterTheSourceOfLifeaudiobbtn").on('tap', function() {
+      var ctime = WaterTheSourceOfLifeaudio.currentTime;
+      WaterTheSourceOfLifeaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WaterTheSourceOfLifeaudiopsbtn").on('tap', function() {
+      WaterTheSourceOfLifeaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+    $("#pol1").on('tap', function() {
+      $('#img1')[0].click();
+    });	
+    $("#pol2").on('tap', function() {
+      $('#img2')[0].click();
+    });	
+	
+	$("#pol3").on('tap', function() {
+      $('#img3')[0].click();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

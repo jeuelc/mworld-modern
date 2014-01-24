@@ -1,0 +1,125 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-energy-ecosystems-and-the-earth-healthy-ecosystems">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1></h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+	<div class="sidebarleft-half">    
+		<div class="navChallengesOfOurTime-healthyecosystems1">			
+			An ecosystem is a web of living things and the environment they live in.  It's a web because everything is connected in some way to everything else.  			
+		</div>	
+		
+		<div class="navChallengesOfOurTime-healthyecosystems2">			
+			Plants provide food for <a href="#herbivores" data-rel="popup">herbivores</a>.  Herbivores can spread seeds for the next generation of plants through their poo or fur.  Predators like lions and tigers eat herbivores.  When predators and other animals die, their bodies are eaten by bugs which create nutrients for the soil, from which more plants grow.
+		</div>	
+		
+		<div class="navChallengesOfOurTime-healthyecosystems3">			
+			The Earth's environment is always changing, for example getting hotter or colder.  Ecosystems change over time as the Earth's environment changes.  But human activity such as the building of cities and the harvesting of water, trees and animals from ecosystems is accelerating the speed of change.  Many ecosystems cannot cope with the speed of change.  The web breaks down, and the ecosystem no longer supports a healthy, natural environment.<br />
+			Do you think it is important for the Earth to have healthy ecosystems?  Why?			
+		</div>			
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>	
+	</div>
+    
+ 	<!------------------------------------- Definition box ----------------------------------- -->
+	<div data-role="popup" id="herbivores" data-position-to="window" data-overlay-theme="a" style="text-align:center;">
+		<div id="node-pop">
+			<p>Herbivores</p>
+			<p>Herbivores are animals that eat plants, such as grasses and leaves.  Herbivores include beasts such as cows, sheep, gazelles, zebras, elephants, giraffes, rhinos, kangaroos, koalas, pandas and many more!</p>
+		</div>
+    </div>
+	<!---------------------------------------------------------------------------------------- --> 
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopHealthyEcosystems"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="HealthyEcosystemsaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="HealthyEcosystemsaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="HealthyEcosystemsaudiofbtn"></div></div>
+    <div id="actualaudio-HealthyEcosystems" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-HealthyEcosystems').html('<audio id="HealthyEcosystemsaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Healthy_Ecosystems.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-energy-ecosystems-and-the-earth-healthy-ecosystems").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-energy-ecosystems-and-the-earth.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopHealthyEcosystems").on('tap', function() {
+      if(!playing) {
+        HealthyEcosystemsaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        HealthyEcosystemsaudio.pause(); HealthyEcosystemsaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#HealthyEcosystemsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        HealthyEcosystemsaudio.pause();
+        paused = true;
+      } else {
+        HealthyEcosystemsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#HealthyEcosystemsaudiofbtn").on('tap', function() {
+      var ctime = HealthyEcosystemsaudio.currentTime;
+      HealthyEcosystemsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#HealthyEcosystemsaudiobbtn").on('tap', function() {
+      var ctime = HealthyEcosystemsaudio.currentTime;
+      HealthyEcosystemsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#HealthyEcosystemsaudiopsbtn").on('tap', function() {
+      HealthyEcosystemsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+  </script>
+</div> <!--//home-->

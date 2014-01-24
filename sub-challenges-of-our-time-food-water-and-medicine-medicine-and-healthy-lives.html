@@ -1,0 +1,189 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-food-water-and-medicine-medicine-and-healthy-lives">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Medicine and Healthy Lives</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">    
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Medicine_And_Healthy_Lives/Gmos.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Medicine_And_Healthy_Lives/Gmos_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Medicine_And_Healthy_Lives/Smallpox_Hi_Res.jpg', 'Smallpox was the first disease that we managed to completely eradicate.  Edward Jenner contributed greatly to the development of the smallpox vaccine and the disease has been officially eradicated since 1979.');">click here</a>
+        
+		<a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Medicine_And_Healthy_Lives/Malaria_Hi_Res.jpg', 'Malaria is a devestating disease which is spread in particular countries by the bite of a mosquito.  Thanks to medical research we now have some protection against malaria. ');">click here</a>
+		
+        <div id="zoomwrapper">
+		<!-- Quiz -->
+          <div id="pol1"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Medicine_And_Healthy_Lives/Gmos.png" alt="" />
+          </div>
+		
+		<!-- Image -->
+          <div id="pol2" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Medicine_And_Healthy_Lives/Smallpox.png" alt="" />
+          </div>
+		
+		<!-- Image -->
+          <div id="pol3"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Medicine_And_Healthy_Lives/Malaria.png" alt="" />
+          </div>		
+
+        </div><!--/zoomwrapper-->
+		  <div class="bpcontentChallengesOfOurTime">
+				<p>You know of course how important it is to the quality of your life to keep yourself healthy.  When world leaders set the Millennium Development Goals for a better future, three of the eight goals were related to health.  These goals related to the health of babies and young children and their mothers, and to the prevention of diseases such as malaria and HIV/AIDS.</p>
+
+				<p>There are many reasons why mothers and young children suffer from poor health.  Lack of resources such as food, clean water, medicine, and medical care is a key reason, as is lack of education.</p>
+
+				<p>Medicine and medical care can be expensive; but they can also be quite cheap.  Many of the best advances in medicine and health in poor communities are basic  vaccination, education, access to basic medicines, access to trained nurses and so on.</p>
+
+				<p>What do you think you could do in your country to improve health?</p>
+		  </div>		
+      </div>
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopMedicineAndHealthyLives"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="MedicineAndHealthyLivesaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="MedicineAndHealthyLivesaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="MedicineAndHealthyLivesaudiofbtn"></div></div>
+    <div id="actualaudio-MedicineAndHealthyLives" style="visibility:hidden;"></div>
+  <!--</div>-->
+
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-MedicineAndHealthyLives').html('<audio id="MedicineAndHealthyLivesaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Medicine_And_Healthy_Lives.mp3" type="audio/mpeg"></audio>');
+      }
+      $("#sub-challenges-of-our-time-food-water-and-medicine-medicine-and-healthy-lives").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-food-water-and-medicine.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopMedicineAndHealthyLives").on('tap', function() {
+      if(!playing) {
+        MedicineAndHealthyLivesaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        MedicineAndHealthyLivesaudio.pause(); MedicineAndHealthyLivesaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#MedicineAndHealthyLivesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        MedicineAndHealthyLivesaudio.pause();
+        paused = true;
+      } else {
+        MedicineAndHealthyLivesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#MedicineAndHealthyLivesaudiofbtn").on('tap', function() {
+      var ctime = MedicineAndHealthyLivesaudio.currentTime;
+      MedicineAndHealthyLivesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#MedicineAndHealthyLivesaudiobbtn").on('tap', function() {
+      var ctime = MedicineAndHealthyLivesaudio.currentTime;
+      MedicineAndHealthyLivesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#MedicineAndHealthyLivesaudiopsbtn").on('tap', function() {
+      MedicineAndHealthyLivesaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#img1')[0].click();
+    });	
+	
+	$("#pol3").on('tap', function() {
+      $('#img2')[0].click();
+    });	
+
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

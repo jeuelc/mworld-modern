@@ -1,0 +1,110 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-what-can-you-do-learn-more">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1></h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+	<div class="sidebarleft-half">    
+		<div class="navChallengesOfOurTime-LearnMore">			
+			<p>Can you solve a global issue without fully understanding it?  Probably not.  You really need to understand an issue well.  You need to understand what causes it, and then you need to understand the causes of the causes!</p>
+
+			<p>Most challenges of our time have a mix of causes: economic; environmental; political; cultural and so on.  You don't need to be an expert in all of these areas, but it helps to understand them.  It helps to hear what other people think too, and to discuss and debate the issues.  You could do that in your classroom, you could do it at home, or with your friends.</p>
+
+			<p>You could read a book, or jump online to find out more information.  You could find information from a large global organisation, such as www.un.org/millenniumgoals; www.undp.org; or www.worldbank.org.  Or you could find out information in your country or local community.  Learn more and you will be well positioned to help more!</p>
+		</div>			
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>	
+	</div>
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopLearnMore"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="LearnMoreaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="LearnMoreaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="LearnMoreaudiofbtn"></div></div>
+    <div id="actualaudio-LearnMore" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-LearnMore').html('<audio id="LearnMoreaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Learn_More.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-what-can-you-do-learn-more").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-what-can-you-do.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopLearnMore").on('tap', function() {
+      if(!playing) {
+        LearnMoreaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        LearnMoreaudio.pause(); LearnMoreaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#LearnMoreaudioplbtn").on('tap', function() {
+      if(!paused) {
+        LearnMoreaudio.pause();
+        paused = true;
+      } else {
+        LearnMoreaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#LearnMoreaudiofbtn").on('tap', function() {
+      var ctime = LearnMoreaudio.currentTime;
+      LearnMoreaudio.currentTime = ctime + 10;
+    });
+    
+    $("#LearnMoreaudiobbtn").on('tap', function() {
+      var ctime = LearnMoreaudio.currentTime;
+      LearnMoreaudio.currentTime = ctime - 10;
+    });
+    
+    $("#LearnMoreaudiopsbtn").on('tap', function() {
+      LearnMoreaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+</div> <!--//home-->

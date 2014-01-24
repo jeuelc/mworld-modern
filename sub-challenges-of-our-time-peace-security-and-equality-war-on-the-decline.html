@@ -1,0 +1,155 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-peace-security-and-equality-war-on-the-decline">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>War... On The Decline?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">    
+ 
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/War_On_The_Decline/Nuclear_Bomb_Hi_Res.png', 'Some modern weapons are so dangerous that they could cause severe destruction to the entire world.  Nuclear weapons were developed during World War Two, but since then many countries have decided that they are too dangerous, and agreed to stop building them.');">click here</a>
+        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/War_On_The_Decline/War_Memorial_Hi_Res.png', 'War memorials like this one remind us of the high cost of war.  Many people are put at great risk when countries are at war. ');">click here</a>
+        <a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/War_On_The_Decline/Knights_Hi_Res.png', 'Large wars are not new.  Throughout history many thousands of people have gone to war over land, resources and even just the whims of their leaders.');">click here</a>		
+		
+        <div id="zoomwrapper">
+		<!-- Image -->
+          <div id="pol1"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/War_On_The_Decline/Nuclear_Bomb.png" alt="" />
+          </div>	
+		
+		<!-- Image -->
+          <div id="pol2" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/War_On_The_Decline/War_Memorial.png" alt="" />
+          </div>
+		
+		<!-- Image -->
+          <div id="pol3"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Peace_Security_And_Equality/War_On_The_Decline/Knights.png" alt="" />
+          </div>		
+
+        </div><!--/zoomwrapper-->
+		  <div class="bpcontentChallengesOfOurTime">
+				<p>War and conflict have been part of human history since the earliest times.  But why do people go to war?  Sometimes it's to get access to resources such as water, gold, oil or land for colonisation.  Sometimes it's to get control of lucrative trading routes.</p>
+
+				<p>Sometimes people go to war because of fear and rivalry, or because of the ego of their leaders.  There are many different causes of war, and often many of them go together.</p>
+
+				<p>The good news is that, according to academics such as Michael Eisner from the United Kingdom and Steven Pinker from the United States, the rates of war and violent crime are much lower today than they were in other times of human history.  But there are still many violent conflicts in the world today, especially civil wars.  And modern weapons are so dangerous that the human cost of war today can be very high indeed.</p>
+
+				<p>Why do you think people go to war?  What do you think we should do to prevent war and conflict?</p>
+		  </div>		
+      </div>
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopWarOnTheDecline"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="WarOnTheDeclineaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="WarOnTheDeclineaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="WarOnTheDeclineaudiofbtn"></div></div>
+    <div id="actualaudio-WarOnTheDecline" style="visibility:hidden;"></div>
+  <!--</div>-->
+
+
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");	   
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WarOnTheDecline').html('<audio id="WarOnTheDeclineaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/War_On_The_Decline.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-peace-security-and-equality-war-on-the-decline").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-peace-security-and-equality.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopWarOnTheDecline").on('tap', function() {
+      if(!playing) {
+        WarOnTheDeclineaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WarOnTheDeclineaudio.pause(); WarOnTheDeclineaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WarOnTheDeclineaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WarOnTheDeclineaudio.pause();
+        paused = true;
+      } else {
+        WarOnTheDeclineaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WarOnTheDeclineaudiofbtn").on('tap', function() {
+      var ctime = WarOnTheDeclineaudio.currentTime;
+      WarOnTheDeclineaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WarOnTheDeclineaudiobbtn").on('tap', function() {
+      var ctime = WarOnTheDeclineaudio.currentTime;
+      WarOnTheDeclineaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WarOnTheDeclineaudiopsbtn").on('tap', function() {
+      WarOnTheDeclineaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+	$("#pol1").on('tap', function() {
+      $('#img1')[0].click();
+    });	
+    $("#pol2").on('tap', function() {
+      $('#img2')[0].click();
+    });	
+	
+	$("#pol3").on('tap', function() {
+      $('#img3')[0].click();
+    });	
+
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

@@ -30,9 +30,9 @@
             </div>
           </div><!--/f1+card-->
         </div><!--/f1_container-->	  
-        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy/Earth_Internal_Hi_Res.png', '');">click here</a>
-        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy/Electric_Car_Hi_Res.png', '');">click here</a>
-        <a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy/Oil_Rig_Hi_Res.png', '');">click here</a>		
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy/Earth_Internal_Hi_Res.png', 'Deep down in the Earth it is very, very hot.  We can use this heat to warm our water and buildings, or even convert it to electricity. ');">click here</a>
+        <a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy/Electric_Car_Hi_Res.png', 'Some cars now use electricity instead of fossil fuels.  However, a few improvements are still needed before many people start to use them. ');">click here</a>
+        <a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy/Oil_Rig_Hi_Res.png', 'We need to go to some pretty extreme places to drill oil.  Sometimes, if the oil is found in areas of our environment that are preserved this can be very controversial. ');">click here</a>		
         <div id="zoomwrapper">
           <div id="pol1"class="pPiece" style="left:70px;top:270px;">
              <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Renewable_Energy/Medicine_And_Healthy_Lives.png" alt="" />
@@ -78,11 +78,9 @@
       $('div#pol1').css("z-index", 3);
       $('div#pol2').css("z-index", 2);
       $('div#pol3').css("z-index", 1);
-      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
-      $('#watchLavaFlowholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");		
       $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
-      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
-      $('#watchMtTungurahuaholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");	
       $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");	  
       if(sound.canPlayType('audio/mpeg')) {
         $('#actualaudio-RenewableEnergy').html('<audio id="RenewableEnergyaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Renewable_Energy.mp3" type="audio/mpeg"></audio>');

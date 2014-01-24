@@ -1,0 +1,144 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-energy-ecosystems-and-the-earth-solutions">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Solutions?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">    
+         <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Solutions/Working_Together_Hi_Res.png', 'How can you help?  Getting together with people and working to preserve ecosystems near you can be a great start.  But make sure that you do lots of research beforehand! ');">click here</a>
+		
+		<a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Solutions/Train_Hi_Res.png', 'This is a picture of one of the first locomotives.  Thanks to modern research and technology today\'s trains are almost unrecognisable from this first design.  Scientists work hard to make our technology faster, smarter and more energy efficient. ');">click here</a>
+        <div id="zoomwrapper">
+          <div id="pol1"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Solutions/Something_In_The_Air.png" alt="" />
+          </div>		
+          <div id="pol2" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Solutions/Working_Together.png" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Solutions/Train.png" alt="" />
+          </div>		  
+        </div><!--/zoomwrapper-->
+		  <div class="bpcontentChallengesOfOurTime">
+				<p>So what are the solutions to environmental issues such as climate change and degraded ecosystems?  There is no perfect solution at this stage.  If there was, people would have implemented it already.</p>
+
+				<p>New technologies can help.  If you can develop a way to make solar panels more cheaply, or a way of storing electricity more efficiently for car batteries, you might make it easier to use renewable sources of energy rather than fossil fuels.</p>
+
+				<p>Economics and politics can help too.  If a local community has ownership of a forest or fishery, they would have more incentive to protect it for the long-term.  If an outsider owns it, they might have more incentive to use all the resources while they can.</p>
+
+				<p>Most global issues have a complex set of causes: economic, political, cultural, environmental, scientific, technological, and so on.  If you want to help solve a global challenge, your solution will surely need to consider each of these factors!</p>
+		  </div>		
+      </div>
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopSolutions"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="Solutionsaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="Solutionsaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="Solutionsaudiofbtn"></div></div>
+    <div id="actualaudio-Solutions" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Solutions').html('<audio id="Solutionsaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Solutions.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-energy-ecosystems-and-the-earth-solutions").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-energy-ecosystems-and-the-earth.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+        bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopSolutions").on('tap', function() {
+      if(!playing) {
+        Solutionsaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Solutionsaudio.pause(); Solutionsaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Solutionsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Solutionsaudio.pause();
+        paused = true;
+      } else {
+        Solutionsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Solutionsaudiofbtn").on('tap', function() {
+      var ctime = Solutionsaudio.currentTime;
+      Solutionsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Solutionsaudiobbtn").on('tap', function() {
+      var ctime = Solutionsaudio.currentTime;
+      Solutionsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Solutionsaudiopsbtn").on('tap', function() {
+      Solutionsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+	
+    $("#pol1").on('tap', function() {
+      $.mobile.changePage("sub-challenges-of-our-time-energy-ecosystems-and-the-earth-solutions-something-in-the-air.html", { transition: "slide" });
+    });	
+
+    $("#pol2").on('tap', function() {
+      $('#img1')[0].click();
+    });	
+	
+	$("#pol3").on('tap', function() {
+      $('#img2')[0].click();
+    });	
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

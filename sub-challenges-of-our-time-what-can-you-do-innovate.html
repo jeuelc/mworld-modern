@@ -1,0 +1,112 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-what-can-you-do-innovate">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1></h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+	<div class="sidebarleft-half">    
+		<div class="navChallengesOfOurTime-Innovate1">			
+			<p>What does innovate mean?  Innovate means to develop new ideas and new ways of doing things.  If you develop a new way of doing your homework faster, and still get the same marks from your teacher, that is innovation!</p>
+			<p>The brothers who developed the first airplane, the scientist who first discovered X-rays, the company who developed the first mobile phone these people were all innovators who helped to solve problems of their time.</p>
+		</div>	
+		<div class="navChallengesOfOurTime-Innovate2">			
+			<p>If you can innovate you might be able to develop new ways of producing clean energy cheaply, or you might develop a new vaccine for a disease like malaria.  Or you might become an economist and develop a new way to distribute food around the world.</p>
+			<p>All you will need is creative thinking, a talented team, some hard work and a bit of luck...!</p>		
+		</div>
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>	
+	</div>
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopInnovate"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="Innovateaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="Innovateaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="Innovateaudiofbtn"></div></div>
+    <div id="actualaudio-Innovate" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Innovate').html('<audio id="Innovateaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Innovate.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-what-can-you-do-innovate").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-what-can-you-do.html", {transition: "slide", reverse: true });
+
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopInnovate").on('tap', function() {
+      if(!playing) {
+        Innovateaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Innovateaudio.pause(); Innovateaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Innovateaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Innovateaudio.pause();
+        paused = true;
+      } else {
+        Innovateaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Innovateaudiofbtn").on('tap', function() {
+      var ctime = Innovateaudio.currentTime;
+      Innovateaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Innovateaudiobbtn").on('tap', function() {
+      var ctime = Innovateaudio.currentTime;
+      Innovateaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Innovateaudiopsbtn").on('tap', function() {
+      Innovateaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+
+  </script>
+</div> <!--//home-->

@@ -1,5 +1,5 @@
 /* Main common basic pages */
-#sub-challenges-of-our-time, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth, #sub-challenges-of-our-time-food-water-and-medicine, #sub-challenges-of-our-time-peace-security-and-equality, #sub-challenges-of-our-time-what-can-you-do, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere-dealing-with-climate-change{
+#sub-challenges-of-our-time, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth, #sub-challenges-of-our-time-food-water-and-medicine, #sub-challenges-of-our-time-peace-security-and-equality, #sub-challenges-of-our-time-what-can-you-do, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere-dealing-with-climate-change, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-renewable-energy, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-solutions, #sub-challenges-of-our-time-food-water-and-medicine-food-for-nine-billion, #sub-challenges-of-our-time-food-water-and-medicine-medicine-and-healthy-lives, #sub-challenges-of-our-time-food-water-and-medicine-water-the-source-of-life,#sub-challenges-of-our-time-peace-security-and-equality-equality,#sub-challenges-of-our-time-peace-security-and-equality-making-it-better,#sub-challenges-of-our-time-peace-security-and-equality-war-on-the-decline{
   background:url('images/9-12/The_Modern_World/Challenges_Of_Our_Time/Challenges_Of_Our_Time_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
@@ -7,8 +7,36 @@
 }
 
 /* Custom Pages Style */
-#sub-megacities-daily-life{
-  background:url('images/9-12/The_Modern_World/ChallengesOfOurTime/Daily_Life/Daily_Life_BG.png') no-repeat;
+#sub-challenges-of-our-time-energy-ecosystems-and-the-earth-healthy-ecosystems{
+  background:url('images/9-12/The_Modern_World/Challenges_Of_Our_Time/Energy_Ecosystems_And_The_Earth/Healthy_Ecosystems/Healthy_Ecosystems_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-challenges-of-our-time-what-can-you-do-connect{
+  background:url('images/9-12/The_Modern_World/Challenges_Of_Our_Time/What_Can_You_Do/Connect/Connect_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-challenges-of-our-time-what-can-you-do-innovate{
+  background:url('images/9-12/The_Modern_World/Challenges_Of_Our_Time/What_Can_You_Do/Innovate/Innovate_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-challenges-of-our-time-what-can-you-do-learn-more{
+  background:url('images/9-12/The_Modern_World/Challenges_Of_Our_Time/What_Can_You_Do/Learn_More/Learn_More_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-challenges-of-our-time-food-water-and-medicine-food-markets{
+  background:url('images/9-12/The_Modern_World/Challenges_Of_Our_Time/Food_Water_And_Medicine/Food_Markets/Food_Markets_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
@@ -138,7 +166,7 @@
 
 
 /* Common Header Div Design */
-#sub-challenges-of-our-time .bptitleholder,#sub-challenges-of-our-time-energy-ecosystems-and-the-earth .bptitleholder, #sub-challenges-of-our-time-food-water-and-medicine .bptitleholder, #sub-challenges-of-our-time-peace-security-and-equality .bptitleholder, #sub-challenges-of-our-time-what-can-you-do .bptitleholder, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere .bptitleholder, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere-dealing-with-climate-change .bptitleholder{
+#sub-challenges-of-our-time .bptitleholder,#sub-challenges-of-our-time-energy-ecosystems-and-the-earth .bptitleholder, #sub-challenges-of-our-time-food-water-and-medicine .bptitleholder, #sub-challenges-of-our-time-peace-security-and-equality .bptitleholder, #sub-challenges-of-our-time-what-can-you-do .bptitleholder, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere .bptitleholder, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere-dealing-with-climate-change .bptitleholder, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-renewable-energy .bptitleholder, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-solutions .bptitleholder, #sub-challenges-of-our-time-food-water-and-medicine-food-for-nine-billion .bptitleholder, #sub-challenges-of-our-time-food-water-and-medicine-medicine-and-healthy-lives .bptitleholder, #sub-challenges-of-our-time-food-water-and-medicine-water-the-source-of-life .bptitleholder, #sub-challenges-of-our-time-peace-security-and-equality-equality .bptitleholder, #sub-challenges-of-our-time-peace-security-and-equality-making-it-better .bptitleholder, #sub-challenges-of-our-time-peace-security-and-equality-war-on-the-decline .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -149,7 +177,7 @@
 }
 
 /* Custom Header Div Design */
-#sub-megacities-daily-life .bptitleholder{
+#sub-challenges-of-our-time-energy-ecosystems-and-the-earth-healthy-ecosystems .bptitleholder{
 	width: 490px;
 	height: 68px;
 	text-align: center;
@@ -162,7 +190,7 @@
 
 
 /* Common Header Design h1 */
-#sub-challenges-of-our-time .bptitleholder h1, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth .bptitleholder h1, #sub-challenges-of-our-time-food-water-and-medicine .bptitleholder h1,#sub-challenges-of-our-time-peace-security-and-equality .bptitleholder h1, #sub-challenges-of-our-time-what-can-you-do .bptitleholder h1, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere .bptitleholder h1, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere-dealing-with-climate-change .bptitleholder h1{
+#sub-challenges-of-our-time .bptitleholder h1, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth .bptitleholder h1, #sub-challenges-of-our-time-food-water-and-medicine .bptitleholder h1,#sub-challenges-of-our-time-peace-security-and-equality .bptitleholder h1, #sub-challenges-of-our-time-what-can-you-do .bptitleholder h1, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere .bptitleholder h1, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-fossil-fuels-and-the-atmosphere-dealing-with-climate-change .bptitleholder h1, #sub-challenges-of-our-time-energy-ecosystems-and-the-earth-renewable-energy .bptitleholder h1,#sub-challenges-of-our-time-energy-ecosystems-and-the-earth-solutions .bptitleholder h1, #sub-challenges-of-our-time-food-water-and-medicine-food-for-nine-billion .bptitleholder h1, #sub-challenges-of-our-time-food-water-and-medicine-medicine-and-healthy-lives .bptitleholder h1, #sub-challenges-of-our-time-food-water-and-medicine-water-the-source-of-life .bptitleholder h1, #sub-challenges-of-our-time-peace-security-and-equality-equality .bptitleholder h1, #sub-challenges-of-our-time-peace-security-and-equality-making-it-better .bptitleholder h1, #sub-challenges-of-our-time-peace-security-and-equality-war-on-the-decline .bptitleholder h1{
 	text-transform: uppercase;
 	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
@@ -172,7 +200,7 @@
 }
 
 /* Custom Page Header Design h1 */
-#sub-megacities-daily-life .bptitleholder h1{
+#sub-challenges-of-our-time-energy-ecosystems-and-the-earth-healthy-ecosystems .bptitleholder h1{
 	text-transform: uppercase;
 	color: #FFFFFF !important;
 	font-family: "comic sans ms" !important;
@@ -224,16 +252,136 @@
 }
 
 /* Custom content */
-.navChallengesOfOurTime-dailylife{
-	position: absolute;
-	left: 22px;
-	top: 50px;
-	width: 975px;
-	height: 379px;
-	overflow: auto;
-	text-align: center;
-	font-family: comic sans ms;
+.navChallengesOfOurTime-healthyecosystems1{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
 	font-size: 18px;
 	font-weight: normal;
-	color: #FFFFFF;
+	height: 100px;
+	left: 4px;
+	overflow-y: auto;
+	position: absolute;
+	text-align: left;
+	top: 172px;
+	width: 333px;
 }
+.navChallengesOfOurTime-healthyecosystems2{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	height: 200px;
+	left: 687px;
+	overflow-y: auto;
+	position: absolute;
+	text-align: left;
+	top: 117px;
+	width: 333px;	
+}
+.navChallengesOfOurTime-healthyecosystems3{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	height: 112px;
+	left: 346px;
+	overflow-y: auto;
+	position: absolute;
+	text-align: left;
+	top: 552px;
+	width: 333px;	
+}
+.navChallengesOfOurTime-Connect{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	height: 220px;
+	left: 165px;
+	overflow-y: auto;
+	position: absolute;
+	text-align: left;
+	top: 439px;
+	width: 697px;
+}
+.navChallengesOfOurTime-Innovate1{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	height: 300px;
+	left: 20px;
+	position: absolute;
+	text-align: left;
+	top: 203px;
+	width: 350px;
+}
+.navChallengesOfOurTime-Innovate2{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	height: 300px;
+	right: 20px;
+	position: absolute;
+	text-align: right;
+	top: 203px;
+	width: 350px;
+}
+.navChallengesOfOurTime-LearnMore{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	height: 183px;
+	left: 175px;
+	position: absolute;
+	text-align: left;
+	top: 500px;
+	width: 670px;
+	overflow: auto;
+}
+.navChallengesOfOurTime-FoodMarkets{
+	color: #FFFFFF;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	height: 183px;
+	left: 175px;
+	position: absolute;
+	text-align: left;
+	top: 500px;
+	width: 670px;
+	overflow: auto;	
+}
+			.food_1-btn{
+				position: absolute;
+				height: 79px;
+				width: 82px;
+				top: 222px;
+				left: 412px;
+				
+			}
+			.food_2-btn{
+				position: absolute;
+				height: 79px;
+				width: 82px;
+				top: 195px;
+				left: 527px;
+				
+			}
+			.food_3-btn{
+				position: absolute;
+				height: 106px;
+				width: 104px;
+				top: 304px;
+				left: 365px;
+				
+			}
+			.food_4-btn{
+				position: absolute;
+				height: 106px;
+				width: 104px;
+				top: 278px;
+				left: 552px;			
+			}

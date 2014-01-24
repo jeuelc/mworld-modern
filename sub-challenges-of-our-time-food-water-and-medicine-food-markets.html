@@ -1,0 +1,127 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-challenges-of-our-time-food-water-and-medicine-food-markets">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>  
+  <script src="js/slidebar_challenges_of_our_time.js"></script>
+  <link rel="stylesheet" href="css/style_challenges_of_our_time.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnChallengesOfOurTime"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnChallengesOfOurTime"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnChallengesOfOurTime"></div></div>
+  <div class="infobtnholder"><div class="infobtnChallengesOfOurTime"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnChallengesOfOurTime"></div></div>
+  <div class="menubtnholder"><div class="menubtnChallengesOfOurTime"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1></h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+	<div class="sidebarleft-half">    
+		<div class="navChallengesOfOurTime-FoodMarkets">			
+			<p>How much food do you need to eat?  Well that depends, of course.  The bigger you are and the more you exercise, the more food you need.  When you are young and growing, you need more food too.</p>
+		</div>
+		<style>
+
+		</style>
+		<div class="food_1-btn"></div>
+		<div class="food_2-btn"></div>
+		<div class="food_3-btn"></div>
+		<div class="food_4-btn"></div>
+		
+		<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/The_Modern_World/bottomhomemw.png"></a></div>	
+	</div>
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnChallengesOfOurTime" id="playstopFoodMarkets"></div></div>
+    <div class="bChallengesOfOurTime"><div class="rwChallengesOfOurTime" id="FoodMarketsaudiobbtn"></div></div>
+    <div class="plChallengesOfOurTime"><div class="plpsChallengesOfOurTime" id="FoodMarketsaudioplbtn"></div></div>
+    <div class="fChallengesOfOurTime"><div class="fwChallengesOfOurTime" id="FoodMarketsaudiofbtn"></div></div>
+    <div id="actualaudio-FoodMarkets" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FoodMarkets').html('<audio id="FoodMarketsaudio" controls preload onpause="playsChallengesOfOurTime()" onplay="pauseChallengesOfOurTime()"><source src="audio/Challenges_Of_Our_Time/Food_Markets.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-challenges-of-our-time-food-water-and-medicine-food-markets").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundChallengesOfOurTime.pause(); bgsoundChallengesOfOurTime.currentTime = 0; mainaudiobg.play(); });
+    function goBack() {
+      $.mobile.changePage("sub-challenges-of-our-time-food-water-and-medicine.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.play();
+    }
+       
+    function pauseChallengesOfOurTime() {
+         bgsoundChallengesOfOurTime.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFoodMarkets").on('tap', function() {
+      if(!playing) {
+        FoodMarketsaudio.play();
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FoodMarketsaudio.pause(); FoodMarketsaudio.currentTime = 0;
+        $('.micbtnChallengesOfOurTime').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FoodMarketsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FoodMarketsaudio.pause();
+        paused = true;
+      } else {
+        FoodMarketsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FoodMarketsaudiofbtn").on('tap', function() {
+      var ctime = FoodMarketsaudio.currentTime;
+      FoodMarketsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FoodMarketsaudiobbtn").on('tap', function() {
+      var ctime = FoodMarketsaudio.currentTime;
+      FoodMarketsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FoodMarketsaudiopsbtn").on('tap', function() {
+      FoodMarketsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+	$('.food_1-btn').on('tap',function(){
+		$('.navChallengesOfOurTime-FoodMarkets').text('How much food do you need to eat?  Well that depends, of course.  The bigger you are and the more you exercise, the more food you need.  When you are young and growing, you need more food too.');
+	
+	});	
+	$('.food_2-btn').on('tap',function(){
+		$('.navChallengesOfOurTime-FoodMarkets').text('So how do you get food?  If you live on a farm, you can just go outside and get food for yourself  pick a vegetable from the ground, or a nice, fresh egg from a chicken!');
+	
+	});	
+	$('.food_3-btn').on('tap',function(){
+		$('.navChallengesOfOurTime-FoodMarkets').text('But most people don\'t live on farms.  In this case a farmer grows the food you eat, transports the food to a market and sells it, often to a wholesaler.  The wholesaler collects food from lots of farmers, then transports it to another market, and sells it to a distributor.  The distributor sells it to a retailer, who sells it to you and me!');
+	
+	});	
+	$('.food_4-btn').on('tap',function(){
+		$('.navChallengesOfOurTime-FoodMarkets').text('Often this works well, but sometimes it doesn\'t.  Sometimes drought or floods ruin the farmer\'s crops.  Sometimes there aren\'t enough roads to transport the food.  Sometimes the wholesaler, distributor and retailer keep most of the profits, leaving not enough money for the farmer.');	
+	});
+  </script>
+</div> <!--//home-->
